@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Configurations | Quantiform Engineering Optimization Framework</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandInk: '#0E0E10',
+                        brandGraphite: '#2A2A2E',
+                        brandSlate: '#6B6F76',
+                        brandLine: '#D9DBDF',
+                        brandMist: '#F3F4F6',
+                        accentBlue: '#2F6BFF',
+                        accentTeal: '#0FA58F',
+                        accentAmber: '#F0A020',
+                        accentCoral: '#EE5A3C'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #FFFFFF; color: #2A2A2E; }
+        .mega-menu-panel { display: none; }
+        .mega-menu-trigger:hover .mega-menu-panel, .mega-menu-panel:hover { display: block; }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col bg-white">
+    <div class="h-1 w-full bg-accentBlue"></div>
+    <header class="sticky top-0 z-50 bg-[#0E0E10] text-white border-b border-brandGraphite backdrop-blur-md bg-opacity-95">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center space-x-3 group">
+                <div class="relative w-8 h-8 flex items-center justify-center">
+                    <svg class="w-8 h-8 text-white absolute transition-transform group-hover:scale-105" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="40" cy="50" r="30" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+                        <circle cx="60" cy="50" r="30" stroke="#2F6BFF" stroke-width="6" stroke-dasharray="6 4"/>
+                    </svg>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-xl font-bold tracking-tight text-white leading-none">Quantiform</span>
+                    <span class="text-[9px] uppercase tracking-wider text-brandSlate mt-1">Engineering Optimization Framework</span>
+                </div>
+            </a>
+            <nav class="hidden md:flex space-x-6 h-full items-center">
+                <a href="services.html" class="text-sm font-medium text-brandLine hover:text-white transition-colors">Services</a>
+                <a href="projects.html" class="text-sm font-medium text-brandLine hover:text-white transition-colors">Projects</a>
+                <a href="resources.html" class="text-sm font-medium text-brandLine hover:text-white transition-colors">Resources</a>
+                <a href="company.html" class="text-sm font-medium text-brandLine hover:text-white transition-colors">Company</a>
+            </nav>
+            <div>
+                <a href="book-call.html" class="bg-white text-brandInk hover:bg-brandMist px-4 py-2 rounded text-sm font-semibold transition-colors">Book a Call</a>
+            </div>
+        </div>
+    </header>
+    <main class="flex-grow">
+
+<section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <span class="text-xs uppercase tracking-wider text-brandSlate font-semibold block mb-2">// Tracker Telemetry Panels</span>
+    <h1 class="text-3xl font-bold text-brandInk mb-4">Cookie Configurations</h1>
+    <p class="text-brandSlate mb-8">Configure your analytics tracking consents. Our engineering portal uses zero tracking scripts by default to optimize loading speeds and user protection.</p>
+    
+    <div class="space-y-6 text-brandGraphite">
+        <div class="border border-brandLine rounded-md p-6 bg-white shadow-sm">
+            <div class="flex justify-between items-start mb-4">
+                <div>
+                    <h3 class="text-base font-bold text-brandInk">1. Strictly Necessary Engineering System Cookies</h3>
+                    <p class="text-xs text-brandSlate mt-1">Mandatory core trackers required to remember section selection states, active style sheets, dynamic menu toggles, and form token verifications.</p>
+                </div>
+                <span class="text-xs bg-brandInk text-white font-mono px-2 py-1 rounded">ALWAYS MANDATORY</span>
+            </div>
+        </div>
+
+        <div class="border border-brandLine rounded-md p-6 bg-white shadow-sm">
+            <div class="flex justify-between items-center mb-4">
+                <div>
+                    <h3 class="text-base font-bold text-brandInk">2. Performance Analytical Logs</h3>
+                    <p class="text-xs text-brandSlate mt-1">Aggregates anonymized page latency metrics, section interaction tracking, and vector asset rendering speeds.</p>
+                </div>
+                <label class="relative inline-flex items-center cursor-pointer">
+                    <input type="checkbox" id="analytic-toggle" class="sr-only peer" checked>
+                    <div class="w-11 h-6 bg-brandLine peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-brandSlate after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-accentTeal"></div>
+                </label>
+            </div>
+        </div>
+
+        <div class="flex gap-4 pt-4">
+            <button onclick="savePreferences()" class="bg-brandInk text-white px-6 py-2 rounded text-sm font-semibold hover:bg-brandGraphite transition-all">Save Active Preferences</button>
+            <button onclick="acceptAllCookies()" class="bg-accentTeal text-white px-6 py-2 rounded text-sm font-semibold hover:opacity-90 transition-all">Accept All Configurations</button>
+        </div>
+    </div>
+
+    <script>
+        function savePreferences() {
+            const analyticalActive = document.getElementById('analytic-toggle').checked;
+            localStorage.setItem('qtf_cookie_analytics', analyticalActive);
+            alert('Your localized tracking preference variables have been committed securely.');
+        }
+        function acceptAllCookies() {
+            document.getElementById('analytic-toggle').checked = true;
+            localStorage.setItem('qtf_cookie_analytics', true);
+            alert('All operational analytics telemetry systems have been enabled safely.');
+        }
+    </script>
+</section>
+
+    </main>
+    <footer class="bg-[#0E0E10] text-white border-t border-brandGraphite pt-12 pb-8 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center border-b border-brandGraphite pb-8 mb-8 gap-4">
+                <div class="text-xl font-bold tracking-tight text-white">QTF</div>
+                <div class="flex flex-wrap gap-6 justify-center text-xs text-brandSlate">
+                    <a href="legal-mentions.html" class="hover:text-white transition-colors">Legal Mentions</a>
+                    <a href="privacy-policy.html" class="hover:text-white transition-colors">GDPR Privacy Policy</a>
+                    <a href="cookie-config.html" class="hover:text-white transition-colors">Cookie Configurations</a>
+                    <a href="service-cgv.html" class="hover:text-white transition-colors">Service CGV Terms</a>
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row justify-between items-center text-xs text-brandSlate gap-2">
+                <p>&copy; 2026 Quantiform SARL (Incorp. Morocco). All Rights Reserved.</p>
+                <p>Framework Version 4.0 Core Architecture.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
