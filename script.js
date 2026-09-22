@@ -1,95 +1,139 @@
-// Dynamic UI Color Configurations
-const sectionColors = {
-    services: '#2F6BFF',
-    projects: '#0FA58F',
-    company: '#EE5A3C',
-    resources: '#F0A020'
+/**
+ * QUANTIFORM PREMIUM GLOBAL SYSTEM CONTROLLER JS
+ * Core Functionality: Live Theming, Telemetry Tracker, Portfolio Sorting Filter Engine
+ */
+
+// Color Token Constants Configuration
+const sectionAccents = {
+    services: '#2F6BFF',     // Blue
+    projects: '#0FA58F',     // Teal
+    resources: '#F0A020',    // Amber
+    company: '#EE5A3C'       // Coral
 };
 
-function setAccent(sectionKey) {
-    const hexColor = sectionColors[sectionKey] || sectionColors.services;
-    document.documentElement.style.setProperty('--clr-accent-current', hexColor);
+/**
+ * Switch Site Custom Variables and Graphic Curve Accent Paths
+ */
+function switchSectionAccent(sectionKey) {
+    const targetColor = sectionAccents[sectionKey] || sectionAccents.services;
     
-    const simCurve = document.getElementById('simulated-curve');
-    if (simCurve) simCurve.setAttribute('stroke', hexColor);
+    // Inject accent token to root variable context cleanly
+    document.documentElement.style.setProperty('--clr-accent', targetColor);
     
-    const legendDot = document.getElementById('legend-sim-dot');
-    if (legendDot) legendDot.style.backgroundColor = hexColor;
-
-    const navItems = document.querySelectorAll('.nav-links li');
-    navItems.forEach(item => {
-        const link = item.querySelector('a');
-        if (link && link.getAttribute('onclick') && link.getAttribute('onclick').includes(sectionKey)) {
-            item.classList.add('active');
-        } else {
-            item.classList.remove('active');
-        }
-    });
-}
-
-function switchService(serviceId) {
-    setAccent('services');
+    // Update SVG active line stroke array
+    const linePath = document.getElementById('dynamic-curve');
+    if (linePath) {
+        linePath.setAttribute('stroke', targetColor);
+    }
     
-    const tabBtns = document.querySelectorAll('.tab-btn');
-    tabBtns.forEach(btn => {
-        if (btn.getAttribute('onclick').includes(serviceId)) {
-            btn.classList.add('active');
+    // Sync graphical legend indicators
+    const dotElement = document.getElementById('legend-dot');
+    if (dotElement) {
+        dotElement.style.backgroundColor = targetColor;
+    }
+
+    // Sync header navigation link active flags
+    const navLinks = document.querySelectorAll('.nav-links a');
+    navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === `#${sectionKey}`) {
+            link.classList.add('active');
         } else {
-            btn.classList.remove('active');
+            link.classList.remove('active');
         }
     });
 
-    const panels = document.querySelectorAll('.service-panel');
-    panels.forEach(panel => {
-        if (panel.id === `panel-${serviceId}`) {
-            panel.classList.add('active');
-        } else {
-            panel.classList.remove('active');
-        }
-    });
-}
-
-function filterProjects(tag) {
-    setAccent('projects');
-    
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    filterBtns.forEach(btn => {
-        if (btn.getAttribute('onclick').includes(tag)) {
-            btn.classList.add('active');
-        } else {
-            btn.classList.remove('active');
-        }
-    });
-
-    const cards = document.querySelectorAll('.project-card');
-    cards.forEach(card => {
-        const service = card.getAttribute('data-service');
-        if (tag === 'all' || service === tag) {
-            card.style.display = 'flex';
-        } else {
-            card.style.display = 'none';
-        }
-    });
-}
-
-function initTimezone() {
-    try {
-        const zone = Intl.DateTimeFormat().resolvedOptions().timeZone || 'UTC';
-        const display = document.getElementById('tz-display');
-        if (display) display.textContent = zone;
-    } catch (e) {
-        console.warn("Timezone initialization failed", e);
+    // Update monogram color letter mark highlight
+    const monoAccentText = document.getElementById('mono-accent');
+    if (monoAccentText) {
+        monoAccentText.style.color = targetColor;
     }
 }
 
-function handleFormSubmit(event) {
-    event.preventDefault();
-    const name = document.getElementById('client-name').value;
-    alert(`Scoping Request Transmitted Successfully.\n\nThank you ${name}. An engineer from the designated specialization branch will follow up within 48 hours.`);
-    event.target.reset();
-    initTimezone();
+/**
+ * Case Portfolios Live Filtering Loop Framework
+ */
+function filterPortfolio(category) {
+    // Sync active color style dynamically to project palette tracking
+    switchSectionAccent('projects');
+    
+    // Sync target control buttons active tags UI states
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    filterButtons.forEach(btn => {
+        if (btn.getAttribute('onclick').includes(`'${category}'`)) {
+            btn.classList.add('active');
+        } else {
+            btn.classList.remove('active');
+        }
+    });
+
+    // Toggle card matching items configuration visibility states
+    const items = document.querySelectorAll('.case-card');
+    items.forEach(card => {
+        const serviceAttr = card.getAttribute('data-service');
+        if (category === 'all' || serviceAttr === category) {
+            card.style.display = 'flex';
+            card.style.opacity = '1';
+            card.style.transform = 'scale(1)';
+        } else {
+            card.style.display = 'none';
+            card.style.opacity = '0';
+        }
+    });
 }
 
+/**
+ * Automate Device Timezone Synchronization Logging
+ */
+function trackClientTimezone() {
+    try {
+        const detectedZone = Intl.DateTimeFormat().resolvedOptions().timeZone || 'UTC';
+        const tzLogBox = document.getElementById('client-tz-log');
+        if (tzLogBox) {
+            tzLogBox.textContent = `TZ_CONTEXT: ${detectedZone}`;
+        }
+    } catch (err) {
+        console.warn("Timezone calculation pipeline exception logged:", err);
+    }
+}
+
+/**
+ * Request Logs Form Transmit Submission Pipeline Interceptor
+ */
+function processRequestLog(event) {
+    event.preventDefault();
+    const identityInput = document.getElementById('corp-identity').value;
+    const selectedDomain = document.getElementById('domain-scope').value;
+    
+    alert(`TRANSMISSION SUCCESSFUL.\n\nRequest metrics recorded for ${identityInput}. The leading partner managing the [${selectedDomain.toUpperCase()}] division has logged your sync sprint ticket.`);
+    event.target.reset();
+    trackClientTimezone();
+}
+
+// Global Lifecycle Initializer Core Hooks
 document.addEventListener('DOMContentLoaded', () => {
-    initTimezone();
+    trackClientTimezone();
+    
+    // Wire intersection visibility observers to seamlessly match accents during scrolling actions
+    const observableSections = ['services', 'projects', 'resources', 'company'];
+    const observerConfiguration = {
+        root: null,
+        rootMargin: '-25% 0px -55% 0px',
+        threshold: 0
+    };
+    
+    const layoutObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                switchSectionAccent(entry.target.id);
+            }
+        });
+    }, observerConfiguration);
+
+    observableSections.forEach(sectionId => {
+        const targetElement = document.getElementById(sectionId);
+        if (targetElement) {
+            layoutObserver.observe(targetElement);
+        }
+    });
 });

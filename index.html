@@ -7,52 +7,81 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Top Terminal Ribbon -->
+    <div class="terminal-ribbon">
+        <div class="container ribbon-flex">
+            <span class="system-status">● SYSTEM_STATUS: OPERATIONAL (2026)</span>
+            <span class="system-sync">SYNC_LOOP: ACTIVE [Morocco SARL Setup Phase]</span>
+        </div>
+    </div>
+
+    <!-- Main Navigation Header -->
     <header class="site-header">
         <div class="container header-container">
             <div class="logo-block">
-                <div class="logo-row">
-                    <div class="logo-mono" id="brand-monogram">QT<span>F</span></div>
-                </div>
-                <div class="logo-framework">Engineering Optimization Framework</div>
+                <a href="#" class="logo-row">
+                    <span class="logo-mono">QT<span id="mono-accent">F</span></span>
+                    <div class="logo-text">
+                        <span class="brand-name">Quantiform</span>
+                        <span class="brand-tagline">Engineering Optimization Framework</span>
+                    </div>
+                </a>
             </div>
-            <nav>
+            <nav class="main-nav">
                 <ul class="nav-links">
-                    <li class="active"><a href="#services" onclick="setAccent('services')">Services</a></li>
-                    <li><a href="#projects" onclick="setAccent('projects')">Projects</a></li>
-                    <li><a href="#company" onclick="setAccent('company')">Company</a></li>
-                    <li><a href="#book-call" class="btn-book-call">Book a Call</a></li>
+                    <li><a href="#services" class="active" onclick="switchSectionAccent('services')">Services</a></li>
+                    <li><a href="#projects" onclick="switchSectionAccent('projects')">Projects</a></li>
+                    <li><a href="#resources" onclick="switchSectionAccent('resources')">Resources</a></li>
+                    <li><a href="#company" onclick="switchSectionAccent('company')">Company</a></li>
+                    <li><a href="#book-call" class="btn btn-nav">Book a Call</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <main>
-        <section class="hero">
+        <!-- Premium Engineering Hero Console -->
+        <section class="hero-console">
             <div class="container hero-grid">
-                <div class="hero-content">
-                    <span class="eyebrow">Framework Headline</span>
+                <div class="hero-left">
+                    <span class="eyebrow">// SYSTEM INITIALIZATION</span>
                     <h1 class="hero-headline">From digital models to confident decisions.</h1>
-                    <p class="hero-intro">Quantiform helps companies, small businesses, and independent professionals design, test, and improve their systems with simulation, data, and AI—from a first question to a working solution.</p>
+                    <p class="hero-intro">Quantiform turns complex engineering systems and corporate operational data into validated digital models, deep structural analytics, and highly predictable systems optimization frameworks.</p>
                     <div class="hero-actions">
-                        <a href="#book-call" class="btn btn-ink">Book a Diagnostic</a>
-                        <a href="#services" class="btn btn-outline">See How We Work</a>
+                        <a href="#book-call" class="btn btn-primary">Book a Diagnostics Sprint</a>
+                        <a href="#services" class="btn btn-secondary">Explore 4×3 Matrix</a>
                     </div>
                 </div>
-                <div class="hero-visual">
-                    <div class="signature-visual">
-                        <svg viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <line x1="40" y1="20" x2="40" y2="220" stroke="#E5E7EB" stroke-width="1.5"/>
-                            <line x1="40" y1="220" x2="380" y2="220" stroke="#E5E7EB" stroke-width="1.5"/>
-                            <line x1="40" y1="120" x2="380" y2="120" stroke="#F3F4F6" stroke-width="1" stroke-dasharray="4"/>
-                            <path id="measured-curve" d="M40 190 L 90 140 L 150 160 L 220 90 L 300 110 L 380 50" stroke="#6B6F76" stroke-width="1.5" stroke-dasharray="3 3"/>
-                            <path id="simulated-curve" d="M40 180 Q 90 55, 140 135 T 240 85 T 340 145 T 380 70" stroke="var(--clr-accent-current)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        <div class="visual-legend">
-                            <div class="legend-item">
-                                <span class="legend-dot" style="background-color: var(--clr-slate);"></span>Measured
+                <div class="hero-right">
+                    <!-- Tech Dashboard Container -->
+                    <div class="dashboard-panel">
+                        <div class="panel-header-bar">
+                            <span class="panel-title">// MODEL FIDELITY VALIDATION REGIME</span>
+                            <span class="panel-id">SYS_ID: ACTIVE_CALIBRATION</span>
+                        </div>
+                        <div class="panel-body">
+                            <div class="visual-canvas">
+                                <svg viewBox="0 0 400 180" class="curve-svg">
+                                    <!-- Grid lines -->
+                                    <line x1="10" y1="20" x2="390" y2="20" stroke="#2A2A2E" stroke-width="0.5" stroke-dasharray="2 4"/>
+                                    <line x1="10" y1="70" x2="390" y2="70" stroke="#2A2A2E" stroke-width="0.5" stroke-dasharray="2 4"/>
+                                    <line x1="10" y1="120" x2="390" y2="120" stroke="#2A2A2E" stroke-width="0.5" stroke-dasharray="2 4"/>
+                                    
+                                    <!-- Measured curve (Static graphite line) -->
+                                    <path d="M10 140 Q 70 30, 150 110 T 270 60 T 390 120" fill="none" stroke="#6B6F76" stroke-width="1.5" stroke-dasharray="4 4" />
+                                    
+                                    <!-- Simulated curve (Dynamic Accent Track) -->
+                                    <path id="dynamic-curve" d="M10 145 Q 70 32, 150 108 T 270 58 T 390 115" fill="none" stroke="var(--clr-accent)" stroke-width="2.5" stroke-linecap="round"/>
+                                </svg>
                             </div>
-                            <div class="legend-item">
-                                <span class="legend-dot" id="legend-sim-dot" style="background-color: var(--clr-accent-services);"></span>Simulated
+                            <div class="panel-legend">
+                                <span class="legend-item"><span class="dot dot-measured"></span> MEASURED TEST LOGS</span>
+                                <span class="legend-item"><span class="dot dot-simulated" id="legend-dot"></span> SIMULATED ACCURACY</span>
+                            </div>
+                            <div class="panel-footer-metrics">
+                                <span>0.0s (INITIAL STATE)</span>
+                                <span class="metric-highlight">ERR_CONVERGENCE: 98.4%</span>
+                                <span>4.0s (STEADY OVERRUN)</span>
                             </div>
                         </div>
                     </div>
@@ -60,389 +89,357 @@
             </div>
         </section>
 
-        <section class="audiences section-padding">
+        <!-- Sectors and Audiences Section -->
+        <section class="sectors-section">
             <div class="container">
-                <span class="eyebrow">Who We Serve</span>
-                <h2 class="section-title">Engineered for every operational scale</h2>
-                <p class="section-desc">We describe clients by what they want to do, not by their size, and speak to all three with equal respect. The Diagnostic is the low-commitment entry point for everyone.</p>
-                <div class="audience-grid">
-                    <div class="audience-card">
-                        <h3>Companies & R&D Teams</h3>
-                        <p>Extra specialist capacity in simulation, control, data, and AI, without hiring.</p>
-                    </div>
-                    <div class="audience-card">
-                        <h3>Small Businesses & Startups</h3>
-                        <p>Credible engineering help sized to a project and a budget, starting with a fixed-price diagnostic.</p>
-                    </div>
-                    <div class="audience-card">
-                        <h3>Independent Professionals</h3>
-                        <p>A partner for the parts of a project that need modelling, data, or AI skills.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="services" class="services-section section-padding">
-            <div class="container">
-                <span class="eyebrow">Services Framework</span>
-                <h2 class="section-title">Four services. Three uniform formats.</h2>
-                <p class="section-desc">Twelve predictable offers built on structured scoping models to guarantee delivery parameters and transparent invoicing matrix flow.</p>
+                <span class="eyebrow">// TARGET SECTORS</span>
+                <h2 class="section-title">Sectors We Optimize</h2>
+                <p class="section-subtitle">Actionable systems architecture for industries running highly dynamic engineering environments and complex technical stacks.</p>
                 
-                <div class="services-tabs-nav">
-                    <button class="tab-btn active" onclick="switchService('twin')">Twin</button>
-                    <button class="tab-btn" onclick="switchService('insight')">Insight</button>
-                    <button class="tab-btn" onclick="switchService('intelligence')">Intelligence</button>
-                    <button class="tab-btn" onclick="switchService('platform')">Platform</button>
-                </div>
-
-                <div class="services-display">
-                    <div id="panel-twin" class="service-panel active">
-                        <div class="panel-header">
-                            <p class="panel-question">"Will it work before we build it?"</p>
-                            <p class="panel-desc">Mechatronic system design, physics-based modelling and simulation, control design, calibration on real data, digital twins and virtual testing.</p>
-                        </div>
-                        <div class="offers-grid">
-                            <div class="offer-card">
-                                <div class="offer-format">Diagnostic</div>
-                                <h4 class="offer-name">Twin Feasibility Sprint</h4>
-                                <div class="offer-terms">1 to 2 weeks. Assess the problem and propose a plan. Paid up front.</div>
-                            </div>
-                            <div class="offer-card">
-                                <div class="offer-format">Project</div>
-                                <h4 class="offer-name">Digital Twin Build</h4>
-                                <div class="offer-terms">Defined milestones framework. Deposit of 30 to 40%, balance on acceptance.</div>
-                            </div>
-                            <div class="offer-card">
-                                <div class="offer-format">Ongoing Support</div>
-                                <h4 class="offer-name">Twin Care</h4>
-                                <div class="offer-terms">Monthly retainer in advance. Minimum 3 months, then 30 days notice.</div>
-                            </div>
-                        </div>
+                <div class="sectors-grid">
+                    <div class="sector-card">
+                        <h3>Manufacturing & Automation</h3>
+                        <p>Optimizing high-velocity physical setups, minimizing structural prototype cycles through precision systems physics simulations.</p>
                     </div>
-
-                    <div id="panel-insight" class="service-panel">
-                        <div class="panel-header">
-                            <p class="panel-question">"What is our data telling us?"</p>
-                            <p class="panel-desc">Data audit and quality, analysis of test and operating data, KPIs, dashboards and reporting.</p>
-                        </div>
-                        <div class="offers-grid">
-                            <div class="offer-card">
-                                <div class="offer-format">Diagnostic</div>
-                                <h4 class="offer-name">Data Audit Sprint</h4>
-                                <div class="offer-terms">1 to 2 weeks. Assess the data health. Paid up front.</div>
-                            </div>
-                            <div class="offer-card">
-                                <div class="offer-format">Project</div>
-                                <h4 class="offer-name">Analytics and Dashboards</h4>
-                                <div class="offer-terms">Defined milestones framework. Deposit of 30 to 40%, balance on acceptance.</div>
-                            </div>
-                            <div class="offer-card">
-                                <div class="offer-format">Ongoing Support</div>
-                                <h4 class="offer-name">Insight Reporting</h4>
-                                <div class="offer-terms">Monthly retainer in advance. Minimum 3 months, then 30 days notice.</div>
-                            </div>
-                        </div>
+                    <div class="sector-card">
+                        <h3>Automotive & Mobility</h3>
+                        <p>Dynamic mechatronic loop tuning, virtual verification regimes, and accelerated validation models mapped to field test criteria.</p>
                     </div>
-
-                    <div id="panel-intelligence" class="service-panel">
-                        <div class="panel-header">
-                            <p class="panel-question">"Can we predict and optimize?"</p>
-                            <p class="panel-desc">Machine learning, predictive and surrogate models, optimization, and the data preparation those models need.</p>
-                        </div>
-                        <div class="offers-grid">
-                            <div class="offer-card">
-                                <div class="offer-format">Diagnostic</div>
-                                <h4 class="offer-name">AI Feasibility Sprint</h4>
-                                <div class="offer-terms">1 to 2 weeks. Pipeline optimization and feasibility roadmapping.</div>
-                            </div>
-                            <div class="offer-card">
-                                <div class="offer-format">Project</div>
-                                <h4 class="offer-name">AI and Surrogate Models</h4>
-                                <div class="offer-terms">Defined milestones framework. Deposit of 30 to 40%, balance on acceptance.</div>
-                            </div>
-                            <div class="offer-card">
-                                <div class="offer-format">Ongoing Support</div>
-                                <h4 class="offer-name">Model Monitoring</h4>
-                                <div class="offer-terms">Monthly retainer in advance. Minimum 3 months, then 30 days notice.</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="panel-platform" class="service-panel">
-                        <div class="panel-header">
-                            <p class="panel-question">"How do we keep it all in one place?"</p>
-                            <p class="panel-desc">A subscription platform to manage engineering projects, data, models and results, with setup and integration.</p>
-                        </div>
-                        <div class="offers-grid">
-                            <div class="offer-card">
-                                <div class="offer-format">Diagnostic</div>
-                                <h4 class="offer-name">Workflow Audit</h4>
-                                <div class="offer-terms">1 to 2 weeks. Evaluate existing technical management parameters.</div>
-                            </div>
-                            <div class="offer-card">
-                                <div class="offer-format">Project</div>
-                                <h4 class="offer-name">Setup and Integration</h4>
-                                <div class="offer-terms">Defined milestones framework. Deposit of 30 to 40%, balance on acceptance.</div>
-                            </div>
-                            <div class="offer-card">
-                                <div class="offer-format">Ongoing Support</div>
-                                <h4 class="offer-name">Subscription and Support</h4>
-                                <div class="offer-terms">Monthly retainer in advance. Minimum 3 months, then 30 days notice.</div>
-                            </div>
-                        </div>
+                    <div class="sector-card">
+                        <h3>Energy & Industrial Equipment</h3>
+                        <p>Combining physics equations with deep data streams to predict asset behavior, saving downtime and securing high-capacity systems.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="projects" class="projects-section section-padding">
+        <!-- Architecture Matrix (Services) -->
+        <section id="services" class="matrix-section">
             <div class="container">
-                <span class="eyebrow">Demonstrators Portfolio</span>
-                <h2 class="section-title">Transparent technical validation proofs</h2>
-                <p class="section-desc">Six demonstrators built honestly on public or simulated data to prove core error matrices and calculation models.</p>
+                <span class="eyebrow">// ARCHITECTURE MATRIX</span>
+                <h2 class="section-title">4 Capabilities. 3 Engagement Tiers.</h2>
+                <p class="section-subtitle">Predictable results, fixed scopes, and measurable milestones built to absorb technical volatility cleanly.</p>
                 
-                <div class="filter-controls">
-                    <button class="filter-btn active" onclick="filterProjects('all')">All Capabilities</button>
-                    <button class="filter-btn" onclick="filterProjects('twin')">Twin</button>
-                    <button class="filter-btn" onclick="filterProjects('insight')">Insight</button>
-                    <button class="filter-btn" onclick="filterProjects('intelligence')">Intelligence</button>
-                    <button class="filter-btn" onclick="filterProjects('platform')">Platform</button>
-                </div>
-
-                <div class="projects-grid">
-                    <div class="project-card" data-service="twin">
-                        <div class="project-top">
-                            <div class="project-meta-row">
-                                <span class="service-tag">Twin</span>
-                                <span class="honest-badge">Demonstrator · Simulated Public Data</span>
-                            </div>
-                            <h3 class="project-title">Friction-aware digital twin of a positioning drive</h3>
-                            <div class="project-details">
-                                <div><strong>Duration:</strong> 3 Weeks</div>
-                                <div><strong>Sector:</strong> Robotics</div>
-                            </div>
-                            <div class="project-desc-block">
-                                <p>Model error track against validation data; physical tests replaced by custom simulated algorithms.</p>
-                            </div>
-                            <div class="project-metric">Proves: Accurate model error tracking against validation data.</div>
-                        </div>
-                        <div class="project-tools">Tools: MATLAB, Simulink, System Identification</div>
-                    </div>
-
-                    <div class="project-card" data-service="twin">
-                        <div class="project-top">
-                            <div class="project-meta-row">
-                                <span class="service-tag">Twin</span>
-                                <span class="honest-badge">Demonstrator · Virtual Test</span>
-                            </div>
-                            <h3 class="project-title">Controller design and virtual validation</h3>
-                            <div class="project-details">
-                                <div><strong>Duration:</strong> 2 Weeks</div>
-                                <div><strong>Sector:</strong> Automation</div>
-                            </div>
-                            <div class="project-desc-block">
-                                <p>Requirements met safely in simulation; controller parameters fine-tuned to save testing floor hours.</p>
-                            </div>
-                            <div class="project-metric">Proves: Tuning time saved & safety boundaries validated.</div>
-                        </div>
-                        <div class="project-tools">Tools: Control Loop Designer, Simulink</div>
-                    </div>
-
-                    <div class="project-card" data-service="insight">
-                        <div class="project-top">
-                            <div class="project-meta-row">
-                                <span class="service-tag">Insight</span>
-                                <span class="honest-badge">Demonstrator · Fleet Data</span>
-                            </div>
-                            <h3 class="project-title">Fleet data analysis and dashboard</h3>
-                            <div class="project-details">
-                                <div><strong>Duration:</strong> 4 Weeks</div>
-                                <div><strong>Sector:</strong> Automotive / Mobility</div>
-                            </div>
-                            <div class="project-desc-block">
-                                <p>Manual processing hours saved; structured data-quality validation found hidden asset KPI profiles.</p>
-                            </div>
-                            <div class="project-metric">Proves: Operational manual hours saved & KPI visibility.</div>
-                        </div>
-                        <div class="project-tools">Tools: Python, Pandas, Grafana, Telemetry Hub</div>
-                    </div>
-
-                    <div class="project-card" data-service="intelligence">
-                        <div class="project-top">
-                            <div class="project-meta-row">
-                                <span class="service-tag">Intelligence</span>
-                                <span class="honest-badge">Demonstrator · Neural Surrogate</span>
-                            </div>
-                            <h3 class="project-title">Surrogate model that speeds up a simulation</h3>
-                            <div class="project-details">
-                                <div><strong>Duration:</strong> 3 Weeks</div>
-                                <div><strong>Sector:</strong> Manufacturing</div>
-                            </div>
-                            <div class="project-desc-block">
-                                <p>High-fidelity transient loops approximated instantly, bypassing intensive differential solver loops.</p>
-                            </div>
-                            <div class="project-metric">Proves: Accelerated speed-up factor and strict error boundaries.</div>
-                        </div>
-                        <div class="project-tools">Tools: PyTorch, SciPy Solver, Python</div>
-                    </div>
-
-                    <div class="project-card" data-service="intelligence">
-                        <div class="project-top">
-                            <div class="project-meta-row">
-                                <span class="service-tag">Intelligence</span>
-                                <span class="honest-badge">Demonstrator · Predictive Test</span>
-                            </div>
-                            <h3 class="project-title">Predictive maintenance feasibility sprint</h3>
-                            <div class="project-details">
-                                <div><strong>Duration:</strong> 1.5 Weeks</div>
-                                <div><strong>Sector:</strong> Industrial Equipment</div>
-                            </div>
-                            <div class="project-desc-block">
-                                <p>Data-readiness analytics mapping structural machinery anomalies to lay out a calculated roadmap.</p>
-                            </div>
-                            <div class="project-metric">Proves: Automated sensor data-readiness verdict.</div>
-                        </div>
-                        <div class="project-tools">Tools: Classification Models, Anomaly Pipelines</div>
-                    </div>
-
-                    <div class="project-card" data-service="platform">
-                        <div class="project-top">
-                            <div class="project-meta-row">
-                                <span class="service-tag">Platform</span>
-                                <span class="honest-badge">Demonstrator · Sandbox Hub</span>
-                            </div>
-                            <h3 class="project-title">Engineering data hub (Pilot)</h3>
-                            <div class="project-details">
-                                <div><strong>Duration:</strong> 5 Weeks</div>
-                                <div><strong>Sector:</strong> Energy Systems</div>
-                            </div>
-                            <div class="project-desc-block">
-                                <p>Engineering workflows completely digitized; models, data packages, and validation maps safely structured in one grid.</p>
-                            </div>
-                            <div class="project-metric">Proves: Workflows digitized; models and records in one place.</div>
-                        </div>
-                        <div class="project-tools">Tools: Quantiform SaaS Sandbox, Postgres, Docker</div>
-                    </div>
+                <div class="table-wrapper">
+                    <table class="matrix-table">
+                        <thead>
+                            <tr>
+                                <th>Engineering Capability</th>
+                                <th>Diagnostic <span class="th-sub">(1-2 Wk Fixed Sprint)</span></th>
+                                <th>Project <span class="th-sub">(Custom Deliverables)</span></th>
+                                <th>Ongoing Support <span class="th-sub">(Monthly Reserved)</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="row-twin">
+                                <td class="cap-cell">
+                                    <strong>Quantiform Twin</strong>
+                                    <span class="cap-desc">Physics-based simulation & mechatronics</span>
+                                </td>
+                                <td>
+                                    <div class="offer-title">Twin Feasibility Sprint</div>
+                                    <p>Viability assessment, parameters roadmap and model fidelity scoping strategy.</p>
+                                </td>
+                                <td>
+                                    <div class="offer-title">Digital Twin Build</div>
+                                    <p>Full subsystem assembly calibrated on physical sensor telemetry with error metrics.</p>
+                                </td>
+                                <td>
+                                    <div class="offer-title">Twin Care</div>
+                                    <p>Ongoing validation maintenance routines, new asset scenario injection metrics.</p>
+                                </td>
+                            </tr>
+                            <tr class="row-insight">
+                                <td class="cap-cell">
+                                    <strong>Quantiform Insight</strong>
+                                    <span class="cap-desc">Data analysis & operation dashboards</span>
+                                </td>
+                                <td>
+                                    <div class="offer-title">Data Audit Sprint</div>
+                                    <p>Scrubbing sensor log infrastructure, finding anomalies, mapping core baseline KPIs.</p>
+                                </td>
+                                <td>
+                                    <div class="offer-title">Analytics & Dashboards</div>
+                                    <p>Custom streaming analytical panels displaying core health metrics instantly.</p>
+                                </td>
+                                <td>
+                                    <div class="offer-title">Insight Reporting</div>
+                                    <p>Recurring health evaluations and ongoing operation metric updates.</p>
+                                </td>
+                            </tr>
+                            <tr class="row-intelligence">
+                                <td class="cap-cell">
+                                    <strong>Quantiform Intelligence</strong>
+                                    <span class="cap-desc">AI & data-driven surrogate models</span>
+                                </td>
+                                <td>
+                                    <div class="offer-title">AI Feasibility Sprint</div>
+                                    <p>Feature correlation viability tests and surrogate acceleration strategy maps.</p>
+                                </td>
+                                <td>
+                                    <div class="offer-title">AI & Surrogate Models</div>
+                                    <p>Neural networks trained to emulate heavy mathematical solver computations fast.</p>
+                                </td>
+                                <td>
+                                    <div class="offer-title">Model Monitoring</div>
+                                    <p>Real-time data drift verification and automated neural state recalibration triggers.</p>
+                                </td>
+                            </tr>
+                            <tr class="row-platform">
+                                <td class="cap-cell">
+                                    <strong>Quantiform Platform</strong>
+                                    <span class="cap-desc">Management SaaS software pipeline</span>
+                                </td>
+                                <td>
+                                    <div class="offer-title">Workflow Audit</div>
+                                    <p>Tracking software communication cracks, data storage leaks, and tool overheads.</p>
+                                </td>
+                                <td>
+                                    <div class="offer-title">Setup & Integration</div>
+                                    <p>Deploying dedicated secure project hubs bringing code and data assets together.</p>
+                                </td>
+                                <td>
+                                    <div class="offer-title">Subscription & Support</div>
+                                    <p>Continuous system availability updates, custom user seats and infrastructure maintenance.</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </section>
 
-        <section id="company" class="company-section section-padding">
-            <div class="container company-grid">
-                <div class="identity-card">
-                    <div>
-                        <h3>The Moroccan Engineering Squad</h3>
-                        <p>Quantiform is a company of four Moroccan engineers, incorporated as a SARL in Morocco. Each partner directly commands one core branch, matching explicit operational responsibility to technical expertise.</p>
-                    </div>
-                    <button class="btn cv-download-btn">Download Team Credentials</button>
+        <!-- Case Portfolios (6 Demonstrators with Filter Engine) -->
+        <section id="projects" class="portfolio-section">
+            <div class="container">
+                <span class="eyebrow">// CASE PORTFOLIOS</span>
+                <h2 class="section-title">Verified Demonstrators</h2>
+                <p class="section-subtitle">Real technical challenges solved via exact modeling adaptations, measured cleanly with clear target outputs.</p>
+                
+                <div class="portfolio-filters">
+                    <button class="filter-btn active" onclick="filterPortfolio('all')">ALL CAPABILITIES</button>
+                    <button class="filter-btn" onclick="filterPortfolio('twin')">TWIN</button>
+                    <button class="filter-btn" onclick="filterPortfolio('insight')">INSIGHT</button>
+                    <button class="filter-btn" onclick="filterPortfolio('intelligence')">INTELLIGENCE</button>
+                    <button class="filter-btn" onclick="filterPortfolio('platform')">PLATFORM</button>
                 </div>
-                <div class="team-right">
-                    <span class="eyebrow">Technical Team</span>
-                    <h2 class="section-title">Four Engineers. Four Core Branches.</h2>
-                    <p class="section-desc">We describe what the team can deliver cleanly today, removing technical guesswork from physical asset management cycles.</p>
-                    <div class="team-grid">
-                        <div class="team-card">
-                            <div class="team-role">Founder & Gérant</div>
-                            <div class="team-name">Twin Service Lead</div>
-                            <div class="team-spec">Mechatronics, physics-based modeling, dynamic loop validation solvers.</div>
-                        </div>
-                        <div class="team-card">
-                            <div class="team-role">Partner 2</div>
-                            <div class="team-name">Insight Service Lead</div>
-                            <div class="team-spec">Telemetry analysis, metrics algorithms, telemetry cleansing architectures.</div>
-                        </div>
-                        <div class="team-card">
-                            <div class="team-role">Partner 3</div>
-                            <div class="team-name">Intelligence Lead</div>
-                            <div class="team-spec">Machine learning modeling, neural surrogate training, automated optimizations.</div>
-                        </div>
-                        <div class="team-card">
-                            <div class="team-role">Partner 4</div>
-                            <div class="team-name">Platform Architect</div>
-                            <div class="team-spec">Engineering SaaS management environments, database workflows setup.</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <section id="book-call" class="booking-section section-padding">
-            <div class="container booking-grid">
-                <div class="booking-info">
-                    <span class="eyebrow">Onboarding Gateway</span>
-                    <h3>Initialize an Engineering Diagnostic</h3>
-                    <p class="section-desc">Select your target operational capability. Every scoping request routes directly to the relevant specialized branch engineer.</p>
+                <div class="portfolio-grid" id="portfolio-grid">
+                    <!-- Project 1 -->
+                    <div class="case-card" data-service="twin">
+                        <div class="case-header">
+                            <span class="case-tag">ROBOTICS / MECHATRONICS</span>
+                            <span class="honest-badge">Demonstrator</span>
+                        </div>
+                        <h3>Friction-aware digital twin of a positioning drive</h3>
+                        <p class="case-strategy">Model error monitored clearly against validation datasets. Physical prototype tests replaced safely inside simulation runtime code.</p>
+                        <div class="case-metric">ERR_CONVERGENCE: 98.4% MATCH</div>
+                        <div class="case-footer">Tools: MATLAB, Simulink, System Identification</div>
+                    </div>
                     
-                    <div class="promise-card">
-                        <div class="promise-title">Response-Time Promise</div>
-                        <div class="promise-desc">All technical sync arrays receive clear diagnostic validation scoping notes within 48 hours maximum.</div>
+                    <!-- Project 2 -->
+                    <div class="case-card" data-service="twin">
+                        <div class="case-header">
+                            <span class="case-tag">AUTOMATION CONTROL</span>
+                            <span class="honest-badge">Demonstrator</span>
+                        </div>
+                        <h3>Controller design and virtual validation</h3>
+                        <p class="case-strategy">Strict tracking requirements met inside software simulation environments, drastically minimizing live lab calibration durations.</p>
+                        <div class="case-metric">CALIBRATION_TIME: -40% OVERHEAD</div>
+                        <div class="case-footer">Tools: Control Loop Designer, Frequency Shaping Solvers</div>
                     </div>
 
-                    <div class="tz-detector">
-                        <span>Detected Time-Zone Matrix:</span>
-                        <span id="tz-display" class="tz-badge">Detecting...</span>
+                    <!-- Project 3 -->
+                    <div class="case-card" data-service="insight">
+                        <div class="case-header">
+                            <span class="case-tag">FLEET LOGISTICS</span>
+                            <span class="honest-badge">Demonstrator</span>
+                        </div>
+                        <h3>Fleet data analysis and dashboard</h3>
+                        <p class="case-strategy">Aggregating scattered operation logs into single real-time data flows, catching tracking anomalies automatically.</p>
+                        <div class="case-metric">MANUAL_HOURS: 150 HRS SAVED / MO</div>
+                        <div class="case-footer">Tools: Python, Pandas, Apache Arrow, Grafana</div>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div class="case-card" data-service="intelligence">
+                        <div class="case-header">
+                            <span class="case-tag">COMPUTATIONAL MATH</span>
+                            <span class="honest-badge">Demonstrator</span>
+                        </div>
+                        <h3>Surrogate model that speeds up a simulation</h3>
+                        <p class="case-strategy">Accelerating heavy thermodynamic loop calculations by substituting slow solvers with highly responsive neural approximations.</p>
+                        <div class="case-metric">COMPUTE_VELOCITY: 1,200X ACCELERATION</div>
+                        <div class="case-footer">Tools: PyTorch, SciPy Solvers, Twin Core Link</div>
+                    </div>
+
+                    <!-- Project 5 -->
+                    <div class="case-card" data-service="intelligence">
+                        <div class="case-header">
+                            <span class="case-tag">PREDICTIVE OPERATIONS</span>
+                            <span class="honest-badge">Demonstrator</span>
+                        </div>
+                        <h3>Predictive maintenance feasibility sprint</h3>
+                        <p class="case-strategy">Evaluating factory machine sensor quality levels to map data readiness metrics before launching heavy AI architectures.</p>
+                        <div class="case-metric">DATA_READINESS: 5-DAY VERDICT LOG</div>
+                        <div class="case-footer">Tools: Data Audit Frameworks, Classification Networks</div>
+                    </div>
+
+                    <!-- Project 6 -->
+                    <div class="case-card" data-service="platform">
+                        <div class="case-header">
+                            <span class="case-tag">SaaS / INFRASTRUCTURE</span>
+                            <span class="honest-badge">Demonstrator</span>
+                        </div>
+                        <h3>Engineering data hub (Pilot Platform)</h3>
+                        <p class="case-strategy">Centralizing dynamic math models, parameter code arrays, and deployment tracking sheets inside a secure sandboxed dashboard environment.</p>
+                        <div class="case-metric">HANDOFF_FRICTION: -65% DELAY REDUCTION</div>
+                        <div class="case-footer">Tools: Quantiform SaaS Engine, Postgres, Docker Containerization</div>
                     </div>
                 </div>
-                <div class="booking-form-wrapper">
-                    <form class="booking-form" onsubmit="handleFormSubmit(event)">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="client-name">Operational Name</label>
-                                <input type="text" id="client-name" required placeholder="e.g., Omar Benjelloun">
+            </div>
+        </section>
+
+        <!-- Engineering Insights -->
+        <section id="resources" class="insights-section">
+            <div class="container">
+                <span class="eyebrow">// ENGINEERING INSIGHTS</span>
+                <h2 class="section-title">Knowledge Architecture</h2>
+                <p class="section-subtitle">Deep operational walkthroughs, data templates, and research code summaries built by our core technical group.</p>
+                
+                <div class="insights-grid">
+                    <article class="insight-card">
+                        <span class="insight-meta">Technical Insight Note · 8 Min Read</span>
+                        <h3>Accelerating Transient Hydrodynamic Loops Using Clean Python Surrogate Models</h3>
+                        <p>How neural network surrogate architectures can replace slow differential math solver loops inside full real-time plant operation views.</p>
+                        <a href="#book-call" class="insight-link">Read analysis note →</a>
+                    </article>
+                    
+                    <div class="tools-ip-box">
+                        <span class="ip-tag">INTERNAL TOOLS & IP BUILD</span>
+                        <h3>Automated Calibration Pipeline Engine v1.0</h3>
+                        <p>Our upcoming cloud script integration automatically processes field measurement CSV packages into optimal parameter arrays matching targeted physical equations configurations.</p>
+                        <div class="ip-status-badge">STATUS: UNDER TESTING (TARGET PHASE 3 RELEASE)</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About & Team Section -->
+        <section id="company" class="about-section">
+            <div class="container about-grid">
+                <div class="about-left">
+                    <span class="eyebrow">// ABOUT QUANTIFORM</span>
+                    <h2 class="section-title">Operational Vision</h2>
+                    <p>Quantiform operates explicitly to eliminate blind guesswork from physical hardware cycles. We ensure complex engineering groups validate their architectural layouts, loop parameters, and operational datasets via exact automated mathematical twin protocols before running steel transformations in reality.</p>
+                    <div class="statement-card">
+                        <p class="quote-text">"Quantiform is an engineering technology company led by its founding group of four Moroccan engineers, working interactively to absorb technical volatility for high-value enterprise teams."</p>
+                    </div>
+                </div>
+                <div class="about-right">
+                    <span class="eyebrow">// PRINCIPAL TECHNICAL TEAM</span>
+                    <div class="team-list">
+                        <div class="team-member">
+                            <span class="member-role">FOUNDER & GERANT</span>
+                            <h4>Twin & Simulation Lead</h4>
+                            <p>Mechatronic control dynamics loops, calibration algorithms.</p>
+                        </div>
+                        <div class="team-member">
+                            <span class="member-role">PARTNER 2</span>
+                            <h4>Insight & Telemetry Director</h4>
+                            <p>Data audit matrices, database pipeline engineering architectures.</p>
+                        </div>
+                        <div class="team-member">
+                            <span class="member-role">PARTNER 3</span>
+                            <h4>Intelligence & AI Architect</h4>
+                            <p>Neural surrogate models execution, automated systems optimization loops.</p>
+                        </div>
+                        <div class="team-member">
+                            <span class="member-role">PARTNER 4</span>
+                            <h4>Platform Infrastructure Head</h4>
+                            <p>Secure engineering file systems, web stack integrations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Form Interface Deployment Configuration Block -->
+        <section id="book-call" class="booking-section">
+            <div class="container booking-grid-layout">
+                <div class="booking-left-info">
+                    <span class="eyebrow">// REGISTRATION ENTRY</span>
+                    <h2>Initiate System Diagnostics</h2>
+                    <p>Lock in a fixed-scope assessment loop. We trace engineering dataset formats, evaluate component system dependencies, and map your explicit path forward.</p>
+                    
+                    <div class="response-guarantee">
+                        <div class="g-title">RESPONSE SLA COMMITMENT</div>
+                        <p>Technical engineering assessment proposals delivered directly within 48 business hours maximum.</p>
+                    </div>
+                    
+                    <div class="tz-tracker">
+                        <span>DETECTION CONTEXT:</span>
+                        <span id="client-tz-log" class="tz-badge">Detecting Device Zone...</span>
+                    </div>
+                </div>
+                <div class="booking-right-form">
+                    <form class="terminal-form" onsubmit="processRequestLog(event)">
+                        <div class="form-row-split">
+                            <div class="field-group">
+                                <label for="corp-identity">Corporate Operational Identity</label>
+                                <input type="text" id="corp-identity" required placeholder="e.g., Anis Benjelloun">
                             </div>
-                            <div class="form-group">
-                                <label for="client-email">Electronic Mail Address</label>
-                                <input type="email" id="client-email" required placeholder="name@company.com">
+                            <div class="field-group">
+                                <label for="corp-mail">Electronic Mail Address</label>
+                                <input type="email" id="corp-mail" required placeholder="name@company.com">
                             </div>
                         </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="target-service">Operational Focus Domain</label>
-                                <select id="target-service">
-                                    <option value="twin">Twin Scopes</option>
-                                    <option value="insight">Insight Telemetry</option>
-                                    <option value="intelligence">Intelligence / AI</option>
-                                    <option value="platform">Platform Pilot</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="diagnostic-format">Engagement Tier</label>
-                                <select id="diagnostic-format">
-                                    <option value="diagnostic">Diagnostic Sprint</option>
-                                    <option value="project">Core Project Matrix</option>
-                                    <option value="support">Ongoing Support Retainer</option>
-                                </select>
-                            </div>
+                        
+                        <div class="field-group">
+                            <label for="domain-scope">Primary Core Operational Domain</label>
+                            <select id="domain-scope">
+                                <option value="twin">Quantiform Twin Architecture Scopes</option>
+                                <option value="insight">Quantiform Insight (Data & Dashboards)</option>
+                                <option value="intelligence">Quantiform Intelligence (Industrial AI/Telemetry)</option>
+                                <option value="platform">Quantiform Platform (Management SaaS Software)</option>
+                            </select>
                         </div>
-                        <div class="form-group">
-                            <label for="system-context">Structural Engineering Bottleneck Summary</label>
-                            <textarea id="system-context" rows="4" required placeholder="Outline current data schemas, physical limitations, or mathematical solver constraints."></textarea>
+
+                        <div class="field-group">
+                            <label for="bottleneck-summary">Structural Engineering Bottleneck Summary</label>
+                            <textarea id="bottleneck-summary" rows="4" required placeholder="Identify constraints, data formatting types, or physics solver lags..."></textarea>
                         </div>
-                        <div class="consent-wrapper">
-                            <input type="checkbox" id="legal-consent" required>
-                            <label for="legal-consent" class="consent-text">I explicitly agree to process my information entries safely in full compliance with localized Law 09-08/CNDP and GDPR data transfer terms. See <a href="#privacy">Privacy Policy</a>.</label>
+
+                        <div class="checkbox-container">
+                            <input type="checkbox" id="compliance-check" required>
+                            <label for="compliance-check">I explicitly agree to process my information entries safely in full compliance with localized Moroccan Law 09-08/CNDP and GDPR privacy frameworks to build our technical sync loop.</label>
                         </div>
-                        <button type="submit" class="btn btn-ink" style="width: 100%;">Transmit Request Array</button>
+
+                        <button type="submit" class="btn btn-submit-array">Transmit Request Array</button>
                     </form>
                 </div>
             </div>
         </section>
     </main>
 
+    <!-- Footer Security Grid -->
     <footer class="site-footer">
-        <div class="container">
-            <div class="footer-top">
-                <div class="footer-logo-mono">QTF</div>
-                <div class="footer-links">
-                    <a href="#legal">Legal Mentions</a>
-                    <a href="#privacy">GDPR Privacy Policy</a>
-                    <a href="#cookies">Cookie Configurations</a>
-                    <a href="#cgv">Service CGV Terms</a>
-                </div>
+        <div class="container footer-grid-flex">
+            <div class="footer-left-brand">
+                <span class="footer-mono">QTF</span>
+                <p>Combining exact engineering mathematical constraints with advanced artificial neural intelligence architectures safely.</p>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Quantiform SARL. Incorporated in Morocco. English-first Worldwide Delivery.</p>
-                <p>Optimization Framework Architecture v4.0.</p>
+            <div class="footer-right-compliance">
+                <div class="compliance-links">
+                    <a href="#legal-mentions">Legal Mentions</a>
+                    <a href="#privacy-policy">GDPR Privacy Policy</a>
+                    <a href="#cookie-config">Cookie Configurations</a>
+                    <a href="#cgv-terms">Service CGV Terms</a>
+                </div>
+                <div class="compliance-meta">
+                    <span>Operational Sync Active for 2026/2027.</span>
+                    <span>&copy; 2026 Quantiform SARL. All rights reserved globally.</span>
+                </div>
             </div>
         </div>
     </footer>
