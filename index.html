@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth h-full">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quantiform | Engineering Optimization Framework</title>
-    <meta name="description" content="From digital models to confident decisions. Quantiform turns complex engineering systems and data into digital twins, clear analysis, and reliable decisions.">
+    <title>Engineering Optimization Framework | Quantiform</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -22,7 +21,7 @@
                         accentCoral: '#EE5A3C'
                     },
                     fontFamily: {
-                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                        sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
                     }
                 }
             }
@@ -35,144 +34,134 @@
         body { font-family: 'Inter', sans-serif; background-color: #FFFFFF; color: #2A2A2E; }
     </style>
 </head>
-<body class="antialiased min-h-screen flex flex-col">
-
-    <!-- TOP ACCENT RULE -->
+<body class="antialiased min-h-full flex flex-col bg-white text-brandGraphite"><!-- TOP ACCENT RULE -->
     <div class="h-1 w-full bg-accentBlue transition-colors duration-500" id="topBrandBar"></div>
 
     <!-- HEADER / NAVIGATION -->
     <header class="sticky top-0 z-50 bg-[#0E0E10] text-white border-b border-brandGraphite backdrop-blur-md bg-opacity-95">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <a href="index.html" class="flex flex-col group">
-                <div class="flex items-center space-x-2">
-                    <span class="text-xl font-bold tracking-tight text-white">Quantiform</span>
-                    <span class="text-xs px-2 py-0.5 bg-brandGraphite rounded text-accentBlue font-mono">QTF</span>
+            <!-- Logo Section -->
+            <a href="index.html" class="flex items-center space-x-3 group">
+                <div class="relative w-8 h-8 flex items-center justify-center">
+                    <svg class="w-8 h-8 text-white absolute transition-transform group-hover:scale-105" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="40" cy="50" r="30" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+                        <circle id="logoAccentRing" cx="60" cy="50" r="30" stroke="#2F6BFF" stroke-width="6" stroke-dasharray="6 4" class="transition-colors duration-300"/>
+                    </svg>
                 </div>
-                <span class="text-[10px] text-brandSlate tracking-wider uppercase font-medium">Engineering Optimization Framework</span>
+                <div class="flex flex-col">
+                    <span class="text-xl font-bold tracking-tight text-white leading-none">Quantiform</span>
+                    <span class="text-[9px] uppercase tracking-wider text-brandSlate mt-1">Engineering Optimization Framework</span>
+                </div>
             </a>
 
-            <nav class="hidden md:flex space-x-6 items-center">
-                <div class="relative group py-4">
-                    <a href="services.html" class="text-sm font-medium text-brandLine hover:text-white flex items-center space-x-1">
-                        <span>Services</span>
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                    </a>
-                    <div class="absolute left-1/2 -translate-x-1/2 top-14 w-[500px] bg-brandInk border border-brandGraphite p-6 rounded-b-lg shadow-2xl hidden group-hover:block transition-all">
-                        <div class="grid grid-cols-2 gap-4">
-                            <div class="space-y-2">
-                                <h4 class="text-xs font-bold uppercase tracking-wider text-brandSlate">Capability Core</h4>
-                                <a href="services.html#twin" class="block p-2 rounded hover:bg-brandGraphite transition-colors">
-                                    <span class="block text-sm font-semibold text-accentBlue">Twin</span>
-                                    <span class="block text-xs text-brandSlate">Physics simulation & models</span>
-                                </a>
-                                <a href="services.html#insight" class="block p-2 rounded hover:bg-brandGraphite transition-colors">
-                                    <span class="block text-sm font-semibold text-accentTeal">Insight</span>
-                                    <span class="block text-xs text-brandSlate">Data analytics & dashboards</span>
-                                </a>
-                            </div>
-                            <div class="space-y-2 border-l border-brandGraphite pl-4">
-                                <h4 class="text-xs font-bold uppercase tracking-wider text-brandSlate">&nbsp;</h4>
-                                <a href="services.html#intelligence" class="block p-2 rounded hover:bg-brandGraphite transition-colors">
-                                    <span class="block text-sm font-semibold text-accentAmber">Intelligence</span>
-                                    <span class="block text-xs text-brandSlate">AI & surrogate models</span>
-                                </a>
-                                <a href="services.html#platform" class="block p-2 rounded hover:bg-brandGraphite transition-colors">
-                                    <span class="block text-sm font-semibold text-accentCoral">Platform</span>
-                                    <span class="block text-xs text-brandSlate">Management SaaS</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <a href="projects.html" class="text-sm font-medium text-brandLine hover:text-white transition-colors">Projects</a>
-                <a href="resources.html" class="text-sm font-medium text-brandLine hover:text-white transition-colors">Resources</a>
-                <a href="company.html" class="text-sm font-medium text-brandLine hover:text-white transition-colors">Company</a>
-                <a href="book-call.html" class="bg-white text-brandInk text-sm font-semibold px-4 py-2 rounded hover:bg-brandMist transition-all">Book a Call</a>
+            <!-- Desktop Navigation Menu -->
+            <nav class="hidden md:flex space-x-1 lg:space-x-6 h-full items-center">
+                <a href="services.html" class="text-sm font-medium text-brandLine hover:text-white px-3 py-2 transition-colors">Services</a>
+                <a href="projects.html" class="text-sm font-medium text-brandLine hover:text-white px-3 py-2 transition-colors">Projects</a>
+                <a href="resources.html" class="text-sm font-medium text-brandLine hover:text-white px-3 py-2 transition-colors">Resources</a>
+                <a href="company.html" class="text-sm font-medium text-brandLine hover:text-white px-3 py-2 transition-colors">Company</a>
+                <a href="book-call.html" class="bg-white text-brandInk text-sm font-semibold px-4 py-2 rounded hover:bg-brandMist transition-colors ml-4">Book a Call</a>
             </nav>
         </div>
     </header>
-
     <!-- HERO SECTION -->
-    <section class="bg-gradient-to-b from-brandMist to-white py-20 border-b border-brandMist">
+    <section class="bg-brandMist py-20 border-b border-brandLine overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                <div class="lg:col-span-7 space-y-6">
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-brandInk leading-tight">
+                <div class="lg:col-span-7">
+                    <span class="text-xs font-bold uppercase tracking-wider text-brandSlate block mb-2">// BRAND HEADLINE</span>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-brandInk mb-6 leading-tight">
                         From digital models to confident decisions.
                     </h1>
-                    <p class="text-lg text-brandGraphite max-w-2xl">
-                        Quantiform is an engineering technology company that turns complex systems and data into digital models, clear analysis, and reliable decisions. We empower teams to design, test, and improve workflows remotely, globally, and securely.
+                    <p class="text-lg sm:text-xl text-brandGraphite mb-8 max-w-xl">
+                        Quantiform helps companies, small businesses, and independent professionals design, test, and improve their systems with simulation, data, and AI—from a first question to a working solution.
                     </p>
-                    <div class="flex items-center gap-4">
-                        <a href="book-call.html" class="bg-brandInk text-white font-semibold px-6 py-3 rounded hover:bg-brandGraphite transition-all shadow-md">Book a Diagnostic</a>
-                        <a href="services.html" class="border-2 border-brandInk text-brandInk font-semibold px-6 py-3 rounded hover:bg-brandMist transition-all">See 12 Offers</a>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="book-call.html" class="bg-brandInk text-white px-6 py-3 rounded font-semibold hover:bg-black transition-colors shadow-sm">Book a Diagnostic</a>
+                        <a href="services.html" class="border-2 border-brandInk text-brandInk px-6 py-3 rounded font-semibold hover:bg-brandMist transition-colors">See How We Work</a>
                     </div>
                 </div>
-                <div class="lg:col-span-5 bg-white p-6 rounded-lg border border-brandLine shadow-xl">
-                    <div class="text-xs font-mono text-brandSlate mb-4 flex items-center justify-between">
-                        <span>// MODEL FIDELITY VALIDATION REGIME</span>
-                        <span class="text-accentBlue animate-pulse">SYS_ID: ACTIVE_CALIBRATION</span>
-                    </div>
-                    <div class="h-48 flex items-end relative overflow-hidden bg-brandInk p-4 rounded border border-brandInk">
-                        <svg class="w-full h-full text-accentBlue" viewBox="0 0 100 40" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M0 35 C 15 15, 30 38, 50 12 T 85 22 T 100 5" stroke="#2F6BFF" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-                            <path d="M0 36 C 16 17, 29 40, 49 14 T 84 24 T 100 7" stroke="#FFFFFF" stroke-width="1.5" stroke-dasharray="3 3" stroke-linecap="round" fill="none"/>
-                        </svg>
-                    </div>
-                    <div class="flex justify-end gap-4 mt-3 text-xs font-bold uppercase tracking-wider text-brandSlate">
-                        <div class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-brandSlate"></span>Measured Logs</div>
-                        <div class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-accentBlue"></span>Simulated Twin</div>
+                <div class="lg:col-span-5 relative">
+                    <div class="bg-white p-6 rounded-lg border border-brandLine shadow-sm">
+                        <div class="flex items-center justify-between text-xs text-brandSlate mb-4 font-mono">
+                            <span>// MODEL FIDELITY VALIDATION REGIME</span>
+                            <span class="text-accentBlue animate-pulse">● LIVE_CALIBRATION</span>
+                        </div>
+                        <div class="bg-brandInk p-4 rounded border border-brandGraphite h-48 flex flex-col justify-end relative overflow-hidden">
+                            <svg class="w-full h-32" viewBox="0 0 100 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 25 C 20 5, 40 28, 60 10 T 100 15" stroke="#2F6BFF" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+                                <path d="M0 26 C 21 7, 39 30, 59 12 T 100 14" stroke="#FFFFFF" stroke-width="1.5" stroke-dasharray="3 2" stroke-linecap="round" fill="none"/>
+                            </svg>
+                        </div>
+                        <div class="flex justify-end space-x-6 mt-4 text-xs font-semibold uppercase tracking-wider">
+                            <span class="flex items-center"><span class="w-2 h-2 rounded-full bg-brandSlate mr-2"></span>Measured Data</span>
+                            <span class="flex items-center"><span class="w-2 h-2 rounded-full bg-accentBlue mr-2"></span>Simulated Curve</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- PILLARS SECTION -->
-    <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <span class="text-xs uppercase tracking-widest text-brandSlate font-bold block mb-2">Audience Profiles</span>
-        <h2 class="text-3xl font-bold text-brandInk mb-8">Sized precisely to fit your exact engineering budget</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="bg-brandMist p-6 rounded-lg border border-transparent hover:border-brandLine transition-all">
-                <h3 class="text-lg font-bold text-brandInk mb-2">Companies & R&D Teams</h3>
-                <p class="text-sm text-brandGraphite">Extra specialist capacity in simulation, control, data, and AI, scaling your execution velocity instantly without structural hiring overheads.</p>
+    <!-- AUDIENCES -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-bold uppercase tracking-wider text-brandSlate block mb-2">// GLOBAL REGIME OVERVIEW</span>
+                <h2 class="text-3xl font-bold tracking-tight text-brandInk">Engineered for every operational scale</h2>
             </div>
-            <div class="bg-brandMist p-6 rounded-lg border border-transparent hover:border-brandLine transition-all">
-                <h3 class="text-lg font-bold text-brandInk mb-2">Small Businesses & Startups</h3>
-                <p class="text-sm text-brandGraphite">Credible engineering infrastructure sized perfectly to a defined deployment plan, starting with a transparent low-commitment fixed-price diagnostic.</p>
-            </div>
-            <div class="bg-brandMist p-6 rounded-lg border border-transparent hover:border-brandLine transition-all">
-                <h3 class="text-lg font-bold text-brandInk mb-2">Independent Professionals</h3>
-                <p class="text-sm text-brandGraphite">A reliable technical execution partner for specific components requiring advanced mathematical modeling, engineering data computation, or AI pipelines.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-brandMist p-8 rounded-lg border border-brandLine">
+                    <h3 class="text-xl font-bold text-brandInk mb-3">Companies & R&D Teams</h3>
+                    <p class="text-sm text-brandGraphite">Extra specialist capacity in simulation, control, data, and AI, without hiring overheads or long recruitment processes.</p>
+                </div>
+                <div class="bg-brandMist p-8 rounded-lg border border-brandLine">
+                    <h3 class="text-xl font-bold text-brandInk mb-3">Small Businesses & Startups</h3>
+                    <p class="text-sm text-brandGraphite">Credible engineering help sized to a project and a budget, starting with a fixed-price diagnostic entry point.</p>
+                </div>
+                <div class="bg-brandMist p-8 rounded-lg border border-brandLine">
+                    <h3 class="text-xl font-bold text-brandInk mb-3">Independent Professionals</h3>
+                    <p class="text-sm text-brandGraphite">A technical partner for the components of a layout or project requiring specialized mathematical modeling, data engineering, or AI skills.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- SECTORS -->
-    <section class="py-12 bg-brandInk text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h3 class="text-xs font-bold uppercase tracking-widest text-brandSlate mb-6">Sectors We Optimize Globally</h3>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-sm font-semibold tracking-tight">
-                <div class="p-4 border border-brandGraphite rounded bg-brandGraphite/30">Manufacturing & Process</div>
-                <div class="p-4 border border-brandGraphite rounded bg-brandGraphite/30">Automotive & Mobility</div>
-                <div class="p-4 border border-brandGraphite rounded bg-brandGraphite/30">Energy & Infrastructure</div>
-                <div class="p-4 border border-brandGraphite rounded bg-brandGraphite/30">Robotics & Automation</div>
+    <section class="py-16 bg-brandInk text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h3 class="text-xs font-bold uppercase tracking-wider text-brandSlate mb-6">// SUPPORTED OPERATIONAL TARGETS</h3>
+            <div class="flex flex-wrap justify-center gap-8 text-sm font-medium text-brandLine">
+                <span>Manufacturing</span>
+                <span class="text-brandGraphite">•</span>
+                <span>Automotive & Mobility</span>
+                <span class="text-brandGraphite">•</span>
+                <span>Energy Systems</span>
+                <span class="text-brandGraphite">•</span>
+                <span>Robotics & Automation</span>
+                <span class="text-brandGraphite">•</span>
+                <span>Industrial Equipment</span>
             </div>
         </div>
     </section>
-
-    <!-- FOOTER -->
-    <footer class="mt-auto bg-brandInk text-white border-t border-brandGraphite py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="text-sm text-brandSlate">&copy; 2026 Quantiform SARL. All rights reserved globally. Operational Sync Active.</div>
-            <div class="flex gap-6 text-xs text-brandLine">
-                <a href="#" class="hover:underline">Legal Mentions</a>
-                <a href="#" class="hover:underline">GDPR Privacy Policy</a>
-                <a href="#" class="hover:underline">Cookie Configurations</a>
-                <a href="#" class="hover:underline">Service CGV Terms</a>
+<!-- FOOTER -->
+    <footer class="bg-[#0E0E10] text-white border-t border-brandGraphite mt-auto py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex md:items-center md:justify-between border-b border-brandGraphite pb-8 mb-8">
+                <div class="flex items-center space-x-3">
+                    <span class="text-xl font-bold tracking-tight text-white">Quantiform</span>
+                </div>
+                <div class="flex flex-wrap gap-6 mt-4 md:mt-0 justify-center text-xs text-brandSlate">
+                    <a href="legal-mentions.html" class="hover:text-white transition-colors">Legal Mentions</a>
+                    <a href="privacy-policy.html" class="hover:text-white transition-colors">GDPR Privacy Policy</a>
+                    <a href="cookie-config.html" class="hover:text-white transition-colors">Cookie Configurations</a>
+                    <a href="service-cgv.html" class="hover:text-white transition-colors">Service CGV Terms</a>
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between text-xs text-brandSlate">
+                <p>&copy; 2026 Quantiform SARL. Incorporated in Morocco. All rights reserved.</p>
+                <p class="mt-2 md:mt-0 font-mono text-[10px] text-brandGraphite">// VERSION 4.0 // REMOTE REGIME READY</p>
             </div>
         </div>
-    </footer>
-
-</body>
+    </footer></body>
 </html>

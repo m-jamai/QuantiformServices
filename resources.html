@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth h-full">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resources | Quantiform Framework Library</title>
+    <title>Resources Engine | Quantiform</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -16,69 +16,105 @@
                         brandLine: '#D9DBDF',
                         brandMist: '#F3F4F6',
                         accentBlue: '#2F6BFF',
-                        accentAmber: '#F0A020'
+                        accentTeal: '#0FA58F',
+                        accentAmber: '#F0A020',
+                        accentCoral: '#EE5A3C'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>body { font-family: 'Inter', sans-serif; }</style>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #FFFFFF; color: #2A2A2E; }
+    </style>
 </head>
-<body class="antialiased min-h-screen flex flex-col bg-white text-brandGraphite">
+<body class="antialiased min-h-full flex flex-col bg-white text-brandGraphite"><!-- TOP ACCENT RULE -->
+    <div class="h-1 w-full bg-accentBlue transition-colors duration-500" id="topBrandBar"></div>
 
-    <!-- HEADER -->
-    <header class="bg-[#0E0E10] text-white border-b border-brandGraphite h-20 flex items-center">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex justify-between items-center">
-            <a href="index.html" class="flex items-center space-x-2">
-                <span class="text-xl font-bold tracking-tight text-white">Quantiform</span>
-                <span class="text-xs px-2 py-0.5 bg-brandGraphite rounded text-accentBlue font-mono">QTF</span>
+    <!-- HEADER / NAVIGATION -->
+    <header class="sticky top-0 z-50 bg-[#0E0E10] text-white border-b border-brandGraphite backdrop-blur-md bg-opacity-95">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo Section -->
+            <a href="index.html" class="flex items-center space-x-3 group">
+                <div class="relative w-8 h-8 flex items-center justify-center">
+                    <svg class="w-8 h-8 text-white absolute transition-transform group-hover:scale-105" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="40" cy="50" r="30" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+                        <circle id="logoAccentRing" cx="60" cy="50" r="30" stroke="#2F6BFF" stroke-width="6" stroke-dasharray="6 4" class="transition-colors duration-300"/>
+                    </svg>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-xl font-bold tracking-tight text-white leading-none">Quantiform</span>
+                    <span class="text-[9px] uppercase tracking-wider text-brandSlate mt-1">Engineering Optimization Framework</span>
+                </div>
             </a>
-            <nav class="space-x-6 text-sm font-medium text-brandLine">
-                <a href="services.html" class="hover:text-white">Services</a>
-                <a href="projects.html" class="hover:text-white">Projects</a>
-                <a href="resources.html" class="text-white border-b-2 border-accentAmber pb-1">Resources</a>
-                <a href="company.html" class="hover:text-white">Company</a>
-                <a href="book-call.html" class="bg-white text-brandInk px-4 py-2 rounded font-semibold">Book a Call</a>
+
+            <!-- Desktop Navigation Menu -->
+            <nav class="hidden md:flex space-x-1 lg:space-x-6 h-full items-center">
+                <a href="services.html" class="text-sm font-medium text-brandLine hover:text-white px-3 py-2 transition-colors">Services</a>
+                <a href="projects.html" class="text-sm font-medium text-brandLine hover:text-white px-3 py-2 transition-colors">Projects</a>
+                <a href="resources.html" class="text-sm font-medium text-brandLine hover:text-white px-3 py-2 transition-colors">Resources</a>
+                <a href="company.html" class="text-sm font-medium text-brandLine hover:text-white px-3 py-2 transition-colors">Company</a>
+                <a href="book-call.html" class="bg-white text-brandInk text-sm font-semibold px-4 py-2 rounded hover:bg-brandMist transition-colors ml-4">Book a Call</a>
             </nav>
         </div>
     </header>
+    <!-- RESOURCES -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mb-16">
+                <span class="text-xs font-bold uppercase tracking-wider text-accentAmber block mb-2">// KNOWLEDGE GENERATION</span>
+                <h1 class="text-4xl font-bold tracking-tight text-brandInk mb-4">One demonstrator feeds four formats</h1>
+                <p class="text-brandSlate">Build once, publish four times to build authority and bridges toward diagnostics.</p>
+            </div>
 
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 flex-grow w-full">
-        <span class="text-xs uppercase tracking-widest text-brandSlate font-bold block mb-2">Knowledge Ecosystem</span>
-        <h1 class="text-4xl font-bold text-brandInk mb-4">4 Formats. Built once, published four times.</h1>
-        <p class="text-brandSlate max-w-2xl mb-12">One comprehensive technical demonstrator feeds all channels to maximize structural trust pipeline velocity for incoming enterprise clients.</p>
-
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-16">
-            <div class="border border-brandLine p-6 rounded-lg bg-brandMist/30">
-                <div class="text-xs font-bold text-accentAmber uppercase mb-2">01 / Video</div>
-                <h3 class="font-bold text-brandInk mb-1">Walkthroughs & Tutorials</h3>
-                <p class="text-xs text-brandSlate">Channel screencasts built to establish mechanical software validation authority fastest.</p>
-            </div>
-            <div class="border border-brandLine p-6 rounded-lg bg-brandMist/30">
-                <div class="text-xs font-bold text-accentAmber uppercase mb-2">02 / Insights (Text)</div>
-                <h3 class="font-bold text-brandInk mb-1">Technology Notes</h3>
-                <p class="text-xs text-brandSlate">Write-ups detailing algorithmic model structural configurations for search engines optimization visibility.</p>
-            </div>
-            <div class="border border-brandLine p-6 rounded-lg bg-brandMist/30">
-                <div class="text-xs font-bold text-accentAmber uppercase mb-2">03 / Guides</div>
-                <h3 class="font-bold text-brandInk mb-1">Step-by-Step Roadmaps</h3>
-                <p class="text-xs text-brandSlate">Calculated system templates providing bridges straight into an official diagnostic sprint gateway.</p>
-            </div>
-            <div class="border border-brandLine p-6 rounded-lg bg-brandMist/30">
-                <div class="text-xs font-bold text-accentAmber uppercase mb-2">04 / Live Sessions</div>
-                <h3 class="font-bold text-brandInk mb-1">Webinars & Clinics</h3>
-                <p class="text-xs text-brandSlate">Interactive office hours drawing highest-intent engineering group inquiries directly to bookings loops.</p>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="p-6 border border-brandLine rounded bg-brandMist">
+                    <span class="text-xs font-mono text-accentBlue block mb-2">[ FORMAT 01 ]</span>
+                    <h3 class="font-bold text-brandInk text-lg mb-2">Video</h3>
+                    <p class="text-xs text-brandGraphite">Channel walkthroughs and technical tutorials to build verification trust rapidly.</p>
+                </div>
+                <div class="p-6 border border-brandLine rounded bg-brandMist">
+                    <span class="text-xs font-mono text-accentTeal block mb-2">[ FORMAT 02 ]</span>
+                    <h3 class="font-bold text-brandInk text-lg mb-2">Insights (Text)</h3>
+                    <p class="text-xs text-brandGraphite">Write-ups of demonstrators, framework code benchmarks, and market structural notes.</p>
+                </div>
+                <div class="p-6 border border-brandLine rounded bg-brandMist">
+                    <span class="text-xs font-mono text-accentAmber block mb-2">[ FORMAT 03 ]</span>
+                    <h3 class="font-bold text-brandInk text-lg mb-2">Guides</h3>
+                    <p class="text-xs text-brandGraphite">Step-by-step optimization roadmaps, each accompanied by a reusable functional template.</p>
+                </div>
+                <div class="p-6 border border-brandLine rounded bg-brandMist">
+                    <span class="text-xs font-mono text-accentCoral block mb-2">[ FORMAT 04 ]</span>
+                    <h3 class="font-bold text-brandInk text-lg mb-2">Live Sessions</h3>
+                    <p class="text-xs text-brandGraphite">Webinars, office hours, and open numerical validation builds that lead directly to bookings.</p>
+                </div>
             </div>
         </div>
-
-        <!-- INSIGHT ITEM HIGHLIGHT -->
-        <div class="border border-brandLine rounded-lg p-8 max-w-3xl">
-            <span class="text-xs font-bold tracking-wider text-accentAmber uppercase block mb-2">Featured Technical Note</span>
-            <h3 class="text-2xl font-bold text-brandInk mb-3">Accelerating Transient Hydrodynamic Loops Using Clean Python Surrogate Models</h3>
-            <p class="text-sm text-brandGraphite mb-4">Discover how deep neural network surrogate architectures replace heavy traditional mechanical differential math equations to evaluate full plant workflows in fractions of a second safely.</p>
-            <a href="book-call.html" class="text-xs text-brandInk font-bold underline hover:text-accentAmber transition-colors">Initialize Diagnostic Alignment Loop &rarr;</a>
+    </section>
+<!-- FOOTER -->
+    <footer class="bg-[#0E0E10] text-white border-t border-brandGraphite mt-auto py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex md:items-center md:justify-between border-b border-brandGraphite pb-8 mb-8">
+                <div class="flex items-center space-x-3">
+                    <span class="text-xl font-bold tracking-tight text-white">Quantiform</span>
+                </div>
+                <div class="flex flex-wrap gap-6 mt-4 md:mt-0 justify-center text-xs text-brandSlate">
+                    <a href="legal-mentions.html" class="hover:text-white transition-colors">Legal Mentions</a>
+                    <a href="privacy-policy.html" class="hover:text-white transition-colors">GDPR Privacy Policy</a>
+                    <a href="cookie-config.html" class="hover:text-white transition-colors">Cookie Configurations</a>
+                    <a href="service-cgv.html" class="hover:text-white transition-colors">Service CGV Terms</a>
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between text-xs text-brandSlate">
+                <p>&copy; 2026 Quantiform SARL. Incorporated in Morocco. All rights reserved.</p>
+                <p class="mt-2 md:mt-0 font-mono text-[10px] text-brandGraphite">// VERSION 4.0 // REMOTE REGIME READY</p>
+            </div>
         </div>
-    </main>
-</body>
+    </footer></body>
 </html>

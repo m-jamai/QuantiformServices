@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth h-full">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Legal Mentions | Quantiform Engineering Optimization Framework</title>
+    <title>Legal Mentions | Quantiform</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -21,28 +21,31 @@
                         accentCoral: '#EE5A3C'
                     },
                     fontFamily: {
-                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #FFFFFF; color: #2A2A2E; }
-        .mega-menu-panel { display: none; }
-        .mega-menu-trigger:hover .mega-menu-panel, .mega-menu-panel:hover { display: block; }
     </style>
 </head>
-<body class="antialiased min-h-screen flex flex-col bg-white">
-    <div class="h-1 w-full bg-accentBlue"></div>
+<body class="antialiased min-h-full flex flex-col bg-white text-brandGraphite"><!-- TOP ACCENT RULE -->
+    <div class="h-1 w-full bg-accentBlue transition-colors duration-500" id="topBrandBar"></div>
+
+    <!-- HEADER / NAVIGATION -->
     <header class="sticky top-0 z-50 bg-[#0E0E10] text-white border-b border-brandGraphite backdrop-blur-md bg-opacity-95">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo Section -->
             <a href="index.html" class="flex items-center space-x-3 group">
                 <div class="relative w-8 h-8 flex items-center justify-center">
                     <svg class="w-8 h-8 text-white absolute transition-transform group-hover:scale-105" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="40" cy="50" r="30" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
-                        <circle cx="60" cy="50" r="30" stroke="#2F6BFF" stroke-width="6" stroke-dasharray="6 4"/>
+                        <circle id="logoAccentRing" cx="60" cy="50" r="30" stroke="#2F6BFF" stroke-width="6" stroke-dasharray="6 4" class="transition-colors duration-300"/>
                     </svg>
                 </div>
                 <div class="flex flex-col">
@@ -50,71 +53,45 @@
                     <span class="text-[9px] uppercase tracking-wider text-brandSlate mt-1">Engineering Optimization Framework</span>
                 </div>
             </a>
-            <nav class="hidden md:flex space-x-6 h-full items-center">
-                <a href="services.html" class="text-sm font-medium text-brandLine hover:text-white transition-colors">Services</a>
-                <a href="projects.html" class="text-sm font-medium text-brandLine hover:text-white transition-colors">Projects</a>
-                <a href="resources.html" class="text-sm font-medium text-brandLine hover:text-white transition-colors">Resources</a>
-                <a href="company.html" class="text-sm font-medium text-brandLine hover:text-white transition-colors">Company</a>
+
+            <!-- Desktop Navigation Menu -->
+            <nav class="hidden md:flex space-x-1 lg:space-x-6 h-full items-center">
+                <a href="services.html" class="text-sm font-medium text-brandLine hover:text-white px-3 py-2 transition-colors">Services</a>
+                <a href="projects.html" class="text-sm font-medium text-brandLine hover:text-white px-3 py-2 transition-colors">Projects</a>
+                <a href="resources.html" class="text-sm font-medium text-brandLine hover:text-white px-3 py-2 transition-colors">Resources</a>
+                <a href="company.html" class="text-sm font-medium text-brandLine hover:text-white px-3 py-2 transition-colors">Company</a>
+                <a href="book-call.html" class="bg-white text-brandInk text-sm font-semibold px-4 py-2 rounded hover:bg-brandMist transition-colors ml-4">Book a Call</a>
             </nav>
-            <div>
-                <a href="book-call.html" class="bg-white text-brandInk hover:bg-brandMist px-4 py-2 rounded text-sm font-semibold transition-colors">Book a Call</a>
-            </div>
         </div>
     </header>
-    <main class="flex-grow">
-
-<section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-    <span class="text-xs uppercase tracking-wider text-brandSlate font-semibold block mb-2">// Corporate Compliance Registry</span>
-    <h1 class="text-3xl font-bold text-brandInk mb-8">Legal Mentions</h1>
-    
-    <div class="space-y-8 text-brandGraphite">
-        <div class="bg-brandMist p-6 rounded-md border border-brandLine">
-            <h2 class="text-lg font-bold text-brandInk mb-4">1. Corporate Identity</h2>
-            <p class="mb-2"><strong>Company Name:</strong> Quantiform SARL (to be incorporated in Morocco)</p>
-            <p class="mb-2"><strong>Legal Form:</strong> Société à Responsabilité Limitée (SARL)</p>
-            <p class="mb-2"><strong>Headquarters:</strong> [Insert Office Address, e.g., Casablanca Finance City, Morocco]</p>
-            <p class="mb-2"><strong>OMPIC Trade Registry (Registre du Commerce):</strong> [RC-XXXXXX Pending Submission]</p>
-            <p class="mb-2"><strong>Patente / Tax ID (IF):</strong> [Pending Incorporation]</p>
-            <p class="mb-2"><strong>Common Enterprise Identifier (ICE):</strong> [Pending Assignment]</p>
+    <section class="py-20 bg-white">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 prose">
+            <h1 class="text-3xl font-bold tracking-tight text-brandInk mb-6">Legal Mentions</h1>
+            <div class="text-sm text-brandGraphite space-y-6">
+                <p><strong>1. Corporate Structure:</strong> Quantiform is a trading layout identity representing a Société à Responsabilité Limitée (SARL) to be incorporated under the jurisdiction rules of the Kingdom of Morocco.</p>
+                <p><strong>2. Registration Parameters:</strong> Office des Commerce et de la Propriété Industrielle (OMPIC) verification pipelines pending confirmation. Registered business parameters will update upon operational completion matrix validation checks.</p>
+                <p><strong>3. Web Hosting Infrastructure:</strong> Sites deployed via GitHub Pages platform architecture infrastructure (GitHub Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, United States).</p>
+            </div>
         </div>
-
-        <div>
-            <h2 class="text-xl font-bold text-brandInk mb-3">2. Management and Editorial Responsibility</h2>
-            <p>The Publication Director responsibilities of this corporate gateway platform are executed directly by the Founder and Managing Director (Gérant) of Quantiform SARL.</p>
-            <p class="mt-2"><strong>Contact Electronic Mail:</strong> compliance@quantiform.ma / [Your Active Email]</p>
-        </div>
-
-        <div>
-            <h2 class="text-xl font-bold text-brandInk mb-3">3. Infrastructure Hosting Provider</h2>
-            <p>This web infrastructure is version-controlled and delivered globally via static network distributions.</p>
-            <p class="mt-2"><strong>Hosting Corporate Entity:</strong> GitHub Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, United States.</p>
-            <p class="mb-2"><strong>Platform Infrastructure:</strong> GitHub Pages Deployment Node Network.</p>
-        </div>
-
-        <div>
-            <h2 class="text-xl font-bold text-brandInk mb-3">4. Intellectual Property</h2>
-            <p>The "Quantiform" wordmark, the "QTF" geometric monogram, layout configurations, underlying scripts, calculation frameworks, algorithms, text components, and graphic visualizations (specifically including the signature simulated-versus-measured data curve) constitute exclusive intellectual property owned fully by Quantiform SARL or its original founders under Moroccan trademark protection guidelines and international copyright conventions.</p>
-        </div>
-    </div>
-</section>
-
-    </main>
-    <footer class="bg-[#0E0E10] text-white border-t border-brandGraphite pt-12 pb-8 mt-auto">
+    </section>
+<!-- FOOTER -->
+    <footer class="bg-[#0E0E10] text-white border-t border-brandGraphite mt-auto py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-center border-b border-brandGraphite pb-8 mb-8 gap-4">
-                <div class="text-xl font-bold tracking-tight text-white">QTF</div>
-                <div class="flex flex-wrap gap-6 justify-center text-xs text-brandSlate">
+            <div class="md:flex md:items-center md:justify-between border-b border-brandGraphite pb-8 mb-8">
+                <div class="flex items-center space-x-3">
+                    <span class="text-xl font-bold tracking-tight text-white">Quantiform</span>
+                </div>
+                <div class="flex flex-wrap gap-6 mt-4 md:mt-0 justify-center text-xs text-brandSlate">
                     <a href="legal-mentions.html" class="hover:text-white transition-colors">Legal Mentions</a>
                     <a href="privacy-policy.html" class="hover:text-white transition-colors">GDPR Privacy Policy</a>
                     <a href="cookie-config.html" class="hover:text-white transition-colors">Cookie Configurations</a>
                     <a href="service-cgv.html" class="hover:text-white transition-colors">Service CGV Terms</a>
                 </div>
             </div>
-            <div class="flex flex-col md:flex-row justify-between items-center text-xs text-brandSlate gap-2">
-                <p>&copy; 2026 Quantiform SARL (Incorp. Morocco). All Rights Reserved.</p>
-                <p>Framework Version 4.0 Core Architecture.</p>
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between text-xs text-brandSlate">
+                <p>&copy; 2026 Quantiform SARL. Incorporated in Morocco. All rights reserved.</p>
+                <p class="mt-2 md:mt-0 font-mono text-[10px] text-brandGraphite">// VERSION 4.0 // REMOTE REGIME READY</p>
             </div>
         </div>
-    </footer>
-</body>
+    </footer></body>
 </html>
