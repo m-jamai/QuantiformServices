@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantiform — Engineering Optimization Framework</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-container">
+            <div class="logo-block">
+                <div class="logo-row">
+                    <div class="logo-mono" id="brand-monogram">QT<span>F</span></div>
+                </div>
+                <div class="logo-framework">Engineering Optimization Framework</div>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li class="active"><a href="#services" onclick="setAccent('services')">Services</a></li>
+                    <li><a href="#projects" onclick="setAccent('projects')">Projects</a></li>
+                    <li><a href="#company" onclick="setAccent('company')">Company</a></li>
+                    <li><a href="#book-call" class="btn-book-call">Book a Call</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <span class="eyebrow">Framework Headline</span>
+                    <h1 class="hero-headline">From digital models to confident decisions.</h1>
+                    <p class="hero-intro">Quantiform helps companies, small businesses, and independent professionals design, test, and improve their systems with simulation, data, and AI—from a first question to a working solution.</p>
+                    <div class="hero-actions">
+                        <a href="#book-call" class="btn btn-ink">Book a Diagnostic</a>
+                        <a href="#services" class="btn btn-outline">See How We Work</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="signature-visual">
+                        <svg viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="40" y1="20" x2="40" y2="220" stroke="#E5E7EB" stroke-width="1.5"/>
+                            <line x1="40" y1="220" x2="380" y2="220" stroke="#E5E7EB" stroke-width="1.5"/>
+                            <line x1="40" y1="120" x2="380" y2="120" stroke="#F3F4F6" stroke-width="1" stroke-dasharray="4"/>
+                            <path id="measured-curve" d="M40 190 L 90 140 L 150 160 L 220 90 L 300 110 L 380 50" stroke="#6B6F76" stroke-width="1.5" stroke-dasharray="3 3"/>
+                            <path id="simulated-curve" d="M40 180 Q 90 55, 140 135 T 240 85 T 340 145 T 380 70" stroke="var(--clr-accent-current)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <div class="visual-legend">
+                            <div class="legend-item">
+                                <span class="legend-dot" style="background-color: var(--clr-slate);"></span>Measured
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-dot" id="legend-sim-dot" style="background-color: var(--clr-accent-services);"></span>Simulated
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="audiences section-padding">
+            <div class="container">
+                <span class="eyebrow">Who We Serve</span>
+                <h2 class="section-title">Engineered for every operational scale</h2>
+                <p class="section-desc">We describe clients by what they want to do, not by their size, and speak to all three with equal respect. The Diagnostic is the low-commitment entry point for everyone.</p>
+                <div class="audience-grid">
+                    <div class="audience-card">
+                        <h3>Companies & R&D Teams</h3>
+                        <p>Extra specialist capacity in simulation, control, data, and AI, without hiring.</p>
+                    </div>
+                    <div class="audience-card">
+                        <h3>Small Businesses & Startups</h3>
+                        <p>Credible engineering help sized to a project and a budget, starting with a fixed-price diagnostic.</p>
+                    </div>
+                    <div class="audience-card">
+                        <h3>Independent Professionals</h3>
+                        <p>A partner for the parts of a project that need modelling, data, or AI skills.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="services-section section-padding">
+            <div class="container">
+                <span class="eyebrow">Services Framework</span>
+                <h2 class="section-title">Four services. Three uniform formats.</h2>
+                <p class="section-desc">Twelve predictable offers built on structured scoping models to guarantee delivery parameters and transparent invoicing matrix flow.</p>
+                
+                <div class="services-tabs-nav">
+                    <button class="tab-btn active" onclick="switchService('twin')">Twin</button>
+                    <button class="tab-btn" onclick="switchService('insight')">Insight</button>
+                    <button class="tab-btn" onclick="switchService('intelligence')">Intelligence</button>
+                    <button class="tab-btn" onclick="switchService('platform')">Platform</button>
+                </div>
+
+                <div class="services-display">
+                    <div id="panel-twin" class="service-panel active">
+                        <div class="panel-header">
+                            <p class="panel-question">"Will it work before we build it?"</p>
+                            <p class="panel-desc">Mechatronic system design, physics-based modelling and simulation, control design, calibration on real data, digital twins and virtual testing.</p>
+                        </div>
+                        <div class="offers-grid">
+                            <div class="offer-card">
+                                <div class="offer-format">Diagnostic</div>
+                                <h4 class="offer-name">Twin Feasibility Sprint</h4>
+                                <div class="offer-terms">1 to 2 weeks. Assess the problem and propose a plan. Paid up front.</div>
+                            </div>
+                            <div class="offer-card">
+                                <div class="offer-format">Project</div>
+                                <h4 class="offer-name">Digital Twin Build</h4>
+                                <div class="offer-terms">Defined milestones framework. Deposit of 30 to 40%, balance on acceptance.</div>
+                            </div>
+                            <div class="offer-card">
+                                <div class="offer-format">Ongoing Support</div>
+                                <h4 class="offer-name">Twin Care</h4>
+                                <div class="offer-terms">Monthly retainer in advance. Minimum 3 months, then 30 days notice.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="panel-insight" class="service-panel">
+                        <div class="panel-header">
+                            <p class="panel-question">"What is our data telling us?"</p>
+                            <p class="panel-desc">Data audit and quality, analysis of test and operating data, KPIs, dashboards and reporting.</p>
+                        </div>
+                        <div class="offers-grid">
+                            <div class="offer-card">
+                                <div class="offer-format">Diagnostic</div>
+                                <h4 class="offer-name">Data Audit Sprint</h4>
+                                <div class="offer-terms">1 to 2 weeks. Assess the data health. Paid up front.</div>
+                            </div>
+                            <div class="offer-card">
+                                <div class="offer-format">Project</div>
+                                <h4 class="offer-name">Analytics and Dashboards</h4>
+                                <div class="offer-terms">Defined milestones framework. Deposit of 30 to 40%, balance on acceptance.</div>
+                            </div>
+                            <div class="offer-card">
+                                <div class="offer-format">Ongoing Support</div>
+                                <h4 class="offer-name">Insight Reporting</h4>
+                                <div class="offer-terms">Monthly retainer in advance. Minimum 3 months, then 30 days notice.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="panel-intelligence" class="service-panel">
+                        <div class="panel-header">
+                            <p class="panel-question">"Can we predict and optimize?"</p>
+                            <p class="panel-desc">Machine learning, predictive and surrogate models, optimization, and the data preparation those models need.</p>
+                        </div>
+                        <div class="offers-grid">
+                            <div class="offer-card">
+                                <div class="offer-format">Diagnostic</div>
+                                <h4 class="offer-name">AI Feasibility Sprint</h4>
+                                <div class="offer-terms">1 to 2 weeks. Pipeline optimization and feasibility roadmapping.</div>
+                            </div>
+                            <div class="offer-card">
+                                <div class="offer-format">Project</div>
+                                <h4 class="offer-name">AI and Surrogate Models</h4>
+                                <div class="offer-terms">Defined milestones framework. Deposit of 30 to 40%, balance on acceptance.</div>
+                            </div>
+                            <div class="offer-card">
+                                <div class="offer-format">Ongoing Support</div>
+                                <h4 class="offer-name">Model Monitoring</h4>
+                                <div class="offer-terms">Monthly retainer in advance. Minimum 3 months, then 30 days notice.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="panel-platform" class="service-panel">
+                        <div class="panel-header">
+                            <p class="panel-question">"How do we keep it all in one place?"</p>
+                            <p class="panel-desc">A subscription platform to manage engineering projects, data, models and results, with setup and integration.</p>
+                        </div>
+                        <div class="offers-grid">
+                            <div class="offer-card">
+                                <div class="offer-format">Diagnostic</div>
+                                <h4 class="offer-name">Workflow Audit</h4>
+                                <div class="offer-terms">1 to 2 weeks. Evaluate existing technical management parameters.</div>
+                            </div>
+                            <div class="offer-card">
+                                <div class="offer-format">Project</div>
+                                <h4 class="offer-name">Setup and Integration</h4>
+                                <div class="offer-terms">Defined milestones framework. Deposit of 30 to 40%, balance on acceptance.</div>
+                            </div>
+                            <div class="offer-card">
+                                <div class="offer-format">Ongoing Support</div>
+                                <h4 class="offer-name">Subscription and Support</h4>
+                                <div class="offer-terms">Monthly retainer in advance. Minimum 3 months, then 30 days notice.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects-section section-padding">
+            <div class="container">
+                <span class="eyebrow">Demonstrators Portfolio</span>
+                <h2 class="section-title">Transparent technical validation proofs</h2>
+                <p class="section-desc">Six demonstrators built honestly on public or simulated data to prove core error matrices and calculation models.</p>
+                
+                <div class="filter-controls">
+                    <button class="filter-btn active" onclick="filterProjects('all')">All Capabilities</button>
+                    <button class="filter-btn" onclick="filterProjects('twin')">Twin</button>
+                    <button class="filter-btn" onclick="filterProjects('insight')">Insight</button>
+                    <button class="filter-btn" onclick="filterProjects('intelligence')">Intelligence</button>
+                    <button class="filter-btn" onclick="filterProjects('platform')">Platform</button>
+                </div>
+
+                <div class="projects-grid">
+                    <div class="project-card" data-service="twin">
+                        <div class="project-top">
+                            <div class="project-meta-row">
+                                <span class="service-tag">Twin</span>
+                                <span class="honest-badge">Demonstrator · Simulated Public Data</span>
+                            </div>
+                            <h3 class="project-title">Friction-aware digital twin of a positioning drive</h3>
+                            <div class="project-details">
+                                <div><strong>Duration:</strong> 3 Weeks</div>
+                                <div><strong>Sector:</strong> Robotics</div>
+                            </div>
+                            <div class="project-desc-block">
+                                <p>Model error track against validation data; physical tests replaced by custom simulated algorithms.</p>
+                            </div>
+                            <div class="project-metric">Proves: Accurate model error tracking against validation data.</div>
+                        </div>
+                        <div class="project-tools">Tools: MATLAB, Simulink, System Identification</div>
+                    </div>
+
+                    <div class="project-card" data-service="twin">
+                        <div class="project-top">
+                            <div class="project-meta-row">
+                                <span class="service-tag">Twin</span>
+                                <span class="honest-badge">Demonstrator · Virtual Test</span>
+                            </div>
+                            <h3 class="project-title">Controller design and virtual validation</h3>
+                            <div class="project-details">
+                                <div><strong>Duration:</strong> 2 Weeks</div>
+                                <div><strong>Sector:</strong> Automation</div>
+                            </div>
+                            <div class="project-desc-block">
+                                <p>Requirements met safely in simulation; controller parameters fine-tuned to save testing floor hours.</p>
+                            </div>
+                            <div class="project-metric">Proves: Tuning time saved & safety boundaries validated.</div>
+                        </div>
+                        <div class="project-tools">Tools: Control Loop Designer, Simulink</div>
+                    </div>
+
+                    <div class="project-card" data-service="insight">
+                        <div class="project-top">
+                            <div class="project-meta-row">
+                                <span class="service-tag">Insight</span>
+                                <span class="honest-badge">Demonstrator · Fleet Data</span>
+                            </div>
+                            <h3 class="project-title">Fleet data analysis and dashboard</h3>
+                            <div class="project-details">
+                                <div><strong>Duration:</strong> 4 Weeks</div>
+                                <div><strong>Sector:</strong> Automotive / Mobility</div>
+                            </div>
+                            <div class="project-desc-block">
+                                <p>Manual processing hours saved; structured data-quality validation found hidden asset KPI profiles.</p>
+                            </div>
+                            <div class="project-metric">Proves: Operational manual hours saved & KPI visibility.</div>
+                        </div>
+                        <div class="project-tools">Tools: Python, Pandas, Grafana, Telemetry Hub</div>
+                    </div>
+
+                    <div class="project-card" data-service="intelligence">
+                        <div class="project-top">
+                            <div class="project-meta-row">
+                                <span class="service-tag">Intelligence</span>
+                                <span class="honest-badge">Demonstrator · Neural Surrogate</span>
+                            </div>
+                            <h3 class="project-title">Surrogate model that speeds up a simulation</h3>
+                            <div class="project-details">
+                                <div><strong>Duration:</strong> 3 Weeks</div>
+                                <div><strong>Sector:</strong> Manufacturing</div>
+                            </div>
+                            <div class="project-desc-block">
+                                <p>High-fidelity transient loops approximated instantly, bypassing intensive differential solver loops.</p>
+                            </div>
+                            <div class="project-metric">Proves: Accelerated speed-up factor and strict error boundaries.</div>
+                        </div>
+                        <div class="project-tools">Tools: PyTorch, SciPy Solver, Python</div>
+                    </div>
+
+                    <div class="project-card" data-service="intelligence">
+                        <div class="project-top">
+                            <div class="project-meta-row">
+                                <span class="service-tag">Intelligence</span>
+                                <span class="honest-badge">Demonstrator · Predictive Test</span>
+                            </div>
+                            <h3 class="project-title">Predictive maintenance feasibility sprint</h3>
+                            <div class="project-details">
+                                <div><strong>Duration:</strong> 1.5 Weeks</div>
+                                <div><strong>Sector:</strong> Industrial Equipment</div>
+                            </div>
+                            <div class="project-desc-block">
+                                <p>Data-readiness analytics mapping structural machinery anomalies to lay out a calculated roadmap.</p>
+                            </div>
+                            <div class="project-metric">Proves: Automated sensor data-readiness verdict.</div>
+                        </div>
+                        <div class="project-tools">Tools: Classification Models, Anomaly Pipelines</div>
+                    </div>
+
+                    <div class="project-card" data-service="platform">
+                        <div class="project-top">
+                            <div class="project-meta-row">
+                                <span class="service-tag">Platform</span>
+                                <span class="honest-badge">Demonstrator · Sandbox Hub</span>
+                            </div>
+                            <h3 class="project-title">Engineering data hub (Pilot)</h3>
+                            <div class="project-details">
+                                <div><strong>Duration:</strong> 5 Weeks</div>
+                                <div><strong>Sector:</strong> Energy Systems</div>
+                            </div>
+                            <div class="project-desc-block">
+                                <p>Engineering workflows completely digitized; models, data packages, and validation maps safely structured in one grid.</p>
+                            </div>
+                            <div class="project-metric">Proves: Workflows digitized; models and records in one place.</div>
+                        </div>
+                        <div class="project-tools">Tools: Quantiform SaaS Sandbox, Postgres, Docker</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="company" class="company-section section-padding">
+            <div class="container company-grid">
+                <div class="identity-card">
+                    <div>
+                        <h3>The Moroccan Engineering Squad</h3>
+                        <p>Quantiform is a company of four Moroccan engineers, incorporated as a SARL in Morocco. Each partner directly commands one core branch, matching explicit operational responsibility to technical expertise.</p>
+                    </div>
+                    <button class="btn cv-download-btn">Download Team Credentials</button>
+                </div>
+                <div class="team-right">
+                    <span class="eyebrow">Technical Team</span>
+                    <h2 class="section-title">Four Engineers. Four Core Branches.</h2>
+                    <p class="section-desc">We describe what the team can deliver cleanly today, removing technical guesswork from physical asset management cycles.</p>
+                    <div class="team-grid">
+                        <div class="team-card">
+                            <div class="team-role">Founder & Gérant</div>
+                            <div class="team-name">Twin Service Lead</div>
+                            <div class="team-spec">Mechatronics, physics-based modeling, dynamic loop validation solvers.</div>
+                        </div>
+                        <div class="team-card">
+                            <div class="team-role">Partner 2</div>
+                            <div class="team-name">Insight Service Lead</div>
+                            <div class="team-spec">Telemetry analysis, metrics algorithms, telemetry cleansing architectures.</div>
+                        </div>
+                        <div class="team-card">
+                            <div class="team-role">Partner 3</div>
+                            <div class="team-name">Intelligence Lead</div>
+                            <div class="team-spec">Machine learning modeling, neural surrogate training, automated optimizations.</div>
+                        </div>
+                        <div class="team-card">
+                            <div class="team-role">Partner 4</div>
+                            <div class="team-name">Platform Architect</div>
+                            <div class="team-spec">Engineering SaaS management environments, database workflows setup.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="book-call" class="booking-section section-padding">
+            <div class="container booking-grid">
+                <div class="booking-info">
+                    <span class="eyebrow">Onboarding Gateway</span>
+                    <h3>Initialize an Engineering Diagnostic</h3>
+                    <p class="section-desc">Select your target operational capability. Every scoping request routes directly to the relevant specialized branch engineer.</p>
+                    
+                    <div class="promise-card">
+                        <div class="promise-title">Response-Time Promise</div>
+                        <div class="promise-desc">All technical sync arrays receive clear diagnostic validation scoping notes within 48 hours maximum.</div>
+                    </div>
+
+                    <div class="tz-detector">
+                        <span>Detected Time-Zone Matrix:</span>
+                        <span id="tz-display" class="tz-badge">Detecting...</span>
+                    </div>
+                </div>
+                <div class="booking-form-wrapper">
+                    <form class="booking-form" onsubmit="handleFormSubmit(event)">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="client-name">Operational Name</label>
+                                <input type="text" id="client-name" required placeholder="e.g., Omar Benjelloun">
+                            </div>
+                            <div class="form-group">
+                                <label for="client-email">Electronic Mail Address</label>
+                                <input type="email" id="client-email" required placeholder="name@company.com">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="target-service">Operational Focus Domain</label>
+                                <select id="target-service">
+                                    <option value="twin">Twin Scopes</option>
+                                    <option value="insight">Insight Telemetry</option>
+                                    <option value="intelligence">Intelligence / AI</option>
+                                    <option value="platform">Platform Pilot</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="diagnostic-format">Engagement Tier</label>
+                                <select id="diagnostic-format">
+                                    <option value="diagnostic">Diagnostic Sprint</option>
+                                    <option value="project">Core Project Matrix</option>
+                                    <option value="support">Ongoing Support Retainer</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="system-context">Structural Engineering Bottleneck Summary</label>
+                            <textarea id="system-context" rows="4" required placeholder="Outline current data schemas, physical limitations, or mathematical solver constraints."></textarea>
+                        </div>
+                        <div class="consent-wrapper">
+                            <input type="checkbox" id="legal-consent" required>
+                            <label for="legal-consent" class="consent-text">I explicitly agree to process my information entries safely in full compliance with localized Law 09-08/CNDP and GDPR data transfer terms. See <a href="#privacy">Privacy Policy</a>.</label>
+                        </div>
+                        <button type="submit" class="btn btn-ink" style="width: 100%;">Transmit Request Array</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-logo-mono">QTF</div>
+                <div class="footer-links">
+                    <a href="#legal">Legal Mentions</a>
+                    <a href="#privacy">GDPR Privacy Policy</a>
+                    <a href="#cookies">Cookie Configurations</a>
+                    <a href="#cgv">Service CGV Terms</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Quantiform SARL. Incorporated in Morocco. English-first Worldwide Delivery.</p>
+                <p>Optimization Framework Architecture v4.0.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
