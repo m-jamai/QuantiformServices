@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Quantiform Demonstrators</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandInk: '#0E0E10',
+                        brandGraphite: '#2A2A2E',
+                        brandSlate: '#6B6F76',
+                        brandLine: '#D9DBDF',
+                        brandMist: '#F3F4F6',
+                        accentBlue: '#2F6BFF',
+                        accentTeal: '#0FA58F',
+                        accentAmber: '#F0A020',
+                        accentCoral: '#EE5A3C'
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>body { font-family: 'Inter', sans-serif; }</style>
+</head>
+<body class="antialiased min-h-screen flex flex-col bg-white text-brandGraphite">
+
+    <!-- HEADER -->
+    <header class="bg-[#0E0E10] text-white border-b border-brandGraphite h-20 flex items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-2">
+                <span class="text-xl font-bold tracking-tight text-white">Quantiform</span>
+                <span class="text-xs px-2 py-0.5 bg-brandGraphite rounded text-accentBlue font-mono">QTF</span>
+            </a>
+            <nav class="space-x-6 text-sm font-medium text-brandLine">
+                <a href="services.html" class="hover:text-white">Services</a>
+                <a href="projects.html" class="text-white border-b-2 border-accentTeal pb-1">Projects</a>
+                <a href="resources.html" class="hover:text-white">Resources</a>
+                <a href="company.html" class="hover:text-white">Company</a>
+                <a href="book-call.html" class="bg-white text-brandInk px-4 py-2 rounded font-semibold">Book a Call</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 flex-grow w-full">
+        <span class="text-xs uppercase tracking-widest text-brandSlate font-bold block mb-2">Demonstrator Matrix</span>
+        <h1 class="text-4xl font-bold text-brandInk mb-4">6 Validated Case Records</h1>
+        <p class="text-brandSlate max-w-2xl mb-8">Real mechanical problems answered via clear data adjustments. Labelled honestly as synthetic validation proofs until client datasets cycle into rotation.</p>
+
+        <!-- FILTERS -->
+        <div class="flex gap-2 flex-wrap mb-12">
+            <button onclick="filterSelection('all')" class="filter-btn bg-brandInk text-white text-xs font-bold px-4 py-2 rounded-full">All Track Proofs</button>
+            <button onclick="filterSelection('twin')" class="filter-btn bg-brandMist hover:bg-brandLine text-brandInk text-xs font-bold px-4 py-2 rounded-full">Twin</button>
+            <button onclick="filterSelection('insight')" class="filter-btn bg-brandMist hover:bg-brandLine text-brandInk text-xs font-bold px-4 py-2 rounded-full">Insight</button>
+            <button onclick="filterSelection('intelligence')" class="filter-btn bg-brandMist hover:bg-brandLine text-brandInk text-xs font-bold px-4 py-2 rounded-full">Intelligence</button>
+            <button onclick="filterSelection('platform')" class="filter-btn bg-brandMist hover:bg-brandLine text-brandInk text-xs font-bold px-4 py-2 rounded-full">Platform</button>
+        </div>
+
+        <!-- GRID ARRAY -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="projectsGrid">
+            
+            <!-- DEMO 1 -->
+            <div class="project-item border border-brandLine rounded-lg p-6 flex flex-col justify-between" data-type="twin">
+                <div>
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-xs font-bold uppercase tracking-wider text-accentBlue">Twin Project</span>
+                        <span class="text-[10px] uppercase font-bold text-brandSlate px-2 py-0.5 bg-brandMist rounded">Demonstrator · Simulated Data</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-brandInk mb-2">Friction-aware digital twin of a positioning drive</h3>
+                    <div class="text-xs text-brandSlate space-x-4 mb-4"><span>Duration: 3 Weeks</span> <span>Sector: Robotics</span></div>
+                    <p class="text-sm text-brandGraphite mb-4">Replaced slow mechanical validation loops by executing structural friction parameter estimation equations against true sensor curves.</p>
+                    <div class="border-l-4 border-accentBlue bg-brandMist/40 p-3 text-sm font-semibold text-brandInk">Result: achieving 98.4% model error convergence.</div>
+                </div>
+                <div class="mt-6 pt-4 border-t border-brandMist text-xs text-brandSlate font-mono">Tools: MATLAB, Simulink, Simscape</div>
+            </div>
+
+            <!-- DEMO 2 -->
+            <div class="project-item border border-brandLine rounded-lg p-6 flex flex-col justify-between" data-type="twin">
+                <div>
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-xs font-bold uppercase tracking-wider text-accentBlue">Twin Project</span>
+                        <span class="text-[10px] uppercase font-bold text-brandSlate px-2 py-0.5 bg-brandMist rounded">Demonstrator · Code Track</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-brandInk mb-2">Controller design and virtual validation</h3>
+                    <div class="text-xs text-brandSlate space-x-4 mb-4"><span>Duration: 2 Weeks</span> <span>Sector: Automation</span></div>
+                    <p class="text-sm text-brandGraphite mb-4">Simulating transient physical dynamics loops before mechanical assemblies are manufactured to calculate stability metrics early.</p>
+                    <div class="border-l-4 border-accentBlue bg-brandMist/40 p-3 text-sm font-semibold text-brandInk">Result: Saved 40% of real test room tuning hours.</div>
+                </div>
+                <div class="mt-6 pt-4 border-t border-brandMist text-xs text-brandSlate font-mono">Tools: Bode Loop Shaping, Controls Toolbox</div>
+            </div>
+
+            <!-- DEMO 3 -->
+            <div class="project-item border border-brandLine rounded-lg p-6 flex flex-col justify-between" data-type="insight">
+                <div>
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-xs font-bold uppercase tracking-wider text-accentTeal">Insight Project</span>
+                        <span class="text-[10px] uppercase font-bold text-brandSlate px-2 py-0.5 bg-brandMist rounded">Demonstrator · Open Source</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-brandInk mb-2">Fleet data analysis and dashboard</h3>
+                    <div class="text-xs text-brandSlate space-x-4 mb-4"><span>Duration: 4 Weeks</span> <span>Sector: Automotive</span></div>
+                    <p class="text-sm text-brandGraphite mb-4">Aggregated scattered logistics telemetry streams into structured pipelines, automatically cleansing sensor outliers.</p>
+                    <div class="border-l-4 border-accentTeal bg-brandMist/40 p-3 text-sm font-semibold text-brandInk">Result: Eliminated 150 hours of manual loading time.</div>
+                </div>
+                <div class="mt-6 pt-4 border-t border-brandMist text-xs text-brandSlate font-mono">Tools: Python, Pandas, Apache Arrow, Grafana</div>
+            </div>
+
+            <!-- DEMO 4 -->
+            <div class="project-item border border-brandLine rounded-lg p-6 flex flex-col justify-between" data-type="intelligence">
+                <div>
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-xs font-bold uppercase tracking-wider text-accentAmber">Intelligence Project</span>
+                        <span class="text-[10px] uppercase font-bold text-brandSlate px-2 py-0.5 bg-brandMist rounded">Demonstrator · Neural Solver</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-brandInk mb-2">Surrogate model that speeds up a simulation</h3>
+                    <div class="text-xs text-brandSlate space-x-4 mb-4"><span>Duration: 3 Weeks</span> <span>Sector: Manufacturing</span></div>
+                    <p class="text-sm text-brandGraphite mb-4">Trained deep network approximations to replace slow numerical differential math structures in active production pipelines.</p>
+                    <div class="border-l-4 border-accentAmber bg-brandMist/40 p-3 text-sm font-semibold text-brandInk">Result: 1200x computation speed acceleration.</div>
+                </div>
+                <div class="mt-6 pt-4 border-t border-brandMist text-xs text-brandSlate font-mono">Tools: PyTorch, SciPy Solvers</div>
+            </div>
+
+            <!-- DEMO 5 -->
+            <div class="project-item border border-brandLine rounded-lg p-6 flex flex-col justify-between" data-type="intelligence">
+                <div>
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-xs font-bold uppercase tracking-wider text-accentAmber">Intelligence Project</span>
+                        <span class="text-[10px] uppercase font-bold text-brandSlate px-2 py-0.5 bg-brandMist rounded">Demonstrator · Telemetry</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-brandInk mb-2">Predictive maintenance feasibility sprint</h3>
+                    <div class="text-xs text-brandSlate space-x-4 mb-4"><span>Duration: 1.5 Weeks</span> <span>Sector: Equipment</span></div>
+                    <p class="text-sm text-brandGraphite mb-4">Evaluated historical plant equipment stress logging anomalies to frame data readiness rankings.</p>
+                    <div class="border-l-4 border-accentAmber bg-brandMist/40 p-3 text-sm font-semibold text-brandInk">Result: Detected sensor calibration anomalies in 5 days.</div>
+                </div>
+                <div class="mt-6 pt-4 border-t border-brandMist text-xs text-brandSlate font-mono">Tools: Data Audit Framework, Anomaly Classifiers</div>
+            </div>
+
+            <!-- DEMO 6 -->
+            <div class="project-item border border-brandLine rounded-lg p-6 flex flex-col justify-between" data-type="platform">
+                <div>
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-xs font-bold uppercase tracking-wider text-accentCoral">Platform Project</span>
+                        <span class="text-[10px] uppercase font-bold text-brandSlate px-2 py-0.5 bg-brandMist rounded">Demonstrator · Secure Core</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-brandInk mb-2">Engineering data hub (pilot)</h3>
+                    <div class="text-xs text-brandSlate space-x-4 mb-4"><span>Duration: 5 Weeks</span> <span>Sector: Energy Systems</span></div>
+                    <p class="text-sm text-brandGraphite mb-4">Centralized disparate layout files, simulation configurations, and localized visualization monitors under single user dashboards.</p>
+                    <div class="border-l-4 border-accentCoral bg-brandMist/40 p-3 text-sm font-semibold text-brandInk">Result: Reduced cross-team data latency loops by 65%.</div>
+                </div>
+                <div class="mt-6 pt-4 border-t border-brandMist text-xs text-brandSlate font-mono">Tools: Quantiform SaaS Core, PostgreSQL, Docker</div>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        function filterSelection(track) {
+            const cards = document.querySelectorAll('.project-item');
+            const buttons = document.querySelectorAll('.filter-btn');
+            
+            // Sync buttons aesthetic
+            buttons.forEach(btn => {
+                if(btn.getAttribute('onclick').includes(track)) {
+                    btn.className = "filter-btn bg-brandInk text-white text-xs font-bold px-4 py-2 rounded-full";
+                } else {
+                    btn.className = "filter-btn bg-brandMist hover:bg-brandLine text-brandInk text-xs font-bold px-4 py-2 rounded-full";
+                }
+            });
+
+            // Adjust cards alignment
+            cards.forEach(card => {
+                if(track === 'all' || card.getAttribute('data-type') === track) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

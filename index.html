@@ -1,449 +1,178 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quantiform — Engineering Optimization Framework</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Quantiform | Engineering Optimization Framework</title>
+    <meta name="description" content="From digital models to confident decisions. Quantiform turns complex engineering systems and data into digital twins, clear analysis, and reliable decisions.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandInk: '#0E0E10',
+                        brandGraphite: '#2A2A2E',
+                        brandSlate: '#6B6F76',
+                        brandLine: '#D9DBDF',
+                        brandMist: '#F3F4F6',
+                        accentBlue: '#2F6BFF',
+                        accentTeal: '#0FA58F',
+                        accentAmber: '#F0A020',
+                        accentCoral: '#EE5A3C'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #FFFFFF; color: #2A2A2E; }
+    </style>
 </head>
-<body>
-    <!-- Top Terminal Ribbon -->
-    <div class="terminal-ribbon">
-        <div class="container ribbon-flex">
-            <span class="system-status">● SYSTEM_STATUS: OPERATIONAL (2026)</span>
-            <span class="system-sync">SYNC_LOOP: ACTIVE [Morocco SARL Setup Phase]</span>
-        </div>
-    </div>
+<body class="antialiased min-h-screen flex flex-col">
 
-    <!-- Main Navigation Header -->
-    <header class="site-header">
-        <div class="container header-container">
-            <div class="logo-block">
-                <a href="#" class="logo-row">
-                    <span class="logo-mono">QT<span id="mono-accent">F</span></span>
-                    <div class="logo-text">
-                        <span class="brand-name">Quantiform</span>
-                        <span class="brand-tagline">Engineering Optimization Framework</span>
+    <!-- TOP ACCENT RULE -->
+    <div class="h-1 w-full bg-accentBlue transition-colors duration-500" id="topBrandBar"></div>
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="sticky top-0 z-50 bg-[#0E0E10] text-white border-b border-brandGraphite backdrop-blur-md bg-opacity-95">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex flex-col group">
+                <div class="flex items-center space-x-2">
+                    <span class="text-xl font-bold tracking-tight text-white">Quantiform</span>
+                    <span class="text-xs px-2 py-0.5 bg-brandGraphite rounded text-accentBlue font-mono">QTF</span>
+                </div>
+                <span class="text-[10px] text-brandSlate tracking-wider uppercase font-medium">Engineering Optimization Framework</span>
+            </a>
+
+            <nav class="hidden md:flex space-x-6 items-center">
+                <div class="relative group py-4">
+                    <a href="services.html" class="text-sm font-medium text-brandLine hover:text-white flex items-center space-x-1">
+                        <span>Services</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </a>
+                    <div class="absolute left-1/2 -translate-x-1/2 top-14 w-[500px] bg-brandInk border border-brandGraphite p-6 rounded-b-lg shadow-2xl hidden group-hover:block transition-all">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="space-y-2">
+                                <h4 class="text-xs font-bold uppercase tracking-wider text-brandSlate">Capability Core</h4>
+                                <a href="services.html#twin" class="block p-2 rounded hover:bg-brandGraphite transition-colors">
+                                    <span class="block text-sm font-semibold text-accentBlue">Twin</span>
+                                    <span class="block text-xs text-brandSlate">Physics simulation & models</span>
+                                </a>
+                                <a href="services.html#insight" class="block p-2 rounded hover:bg-brandGraphite transition-colors">
+                                    <span class="block text-sm font-semibold text-accentTeal">Insight</span>
+                                    <span class="block text-xs text-brandSlate">Data analytics & dashboards</span>
+                                </a>
+                            </div>
+                            <div class="space-y-2 border-l border-brandGraphite pl-4">
+                                <h4 class="text-xs font-bold uppercase tracking-wider text-brandSlate">&nbsp;</h4>
+                                <a href="services.html#intelligence" class="block p-2 rounded hover:bg-brandGraphite transition-colors">
+                                    <span class="block text-sm font-semibold text-accentAmber">Intelligence</span>
+                                    <span class="block text-xs text-brandSlate">AI & surrogate models</span>
+                                </a>
+                                <a href="services.html#platform" class="block p-2 rounded hover:bg-brandGraphite transition-colors">
+                                    <span class="block text-sm font-semibold text-accentCoral">Platform</span>
+                                    <span class="block text-xs text-brandSlate">Management SaaS</span>
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                </a>
-            </div>
-            <nav class="main-nav">
-                <ul class="nav-links">
-                    <li><a href="#services" class="active" onclick="switchSectionAccent('services')">Services</a></li>
-                    <li><a href="#projects" onclick="switchSectionAccent('projects')">Projects</a></li>
-                    <li><a href="#resources" onclick="switchSectionAccent('resources')">Resources</a></li>
-                    <li><a href="#company" onclick="switchSectionAccent('company')">Company</a></li>
-                    <li><a href="#book-call" class="btn btn-nav">Book a Call</a></li>
-                </ul>
+                </div>
+                <a href="projects.html" class="text-sm font-medium text-brandLine hover:text-white transition-colors">Projects</a>
+                <a href="resources.html" class="text-sm font-medium text-brandLine hover:text-white transition-colors">Resources</a>
+                <a href="company.html" class="text-sm font-medium text-brandLine hover:text-white transition-colors">Company</a>
+                <a href="book-call.html" class="bg-white text-brandInk text-sm font-semibold px-4 py-2 rounded hover:bg-brandMist transition-all">Book a Call</a>
             </nav>
         </div>
     </header>
 
-    <main>
-        <!-- Premium Engineering Hero Console -->
-        <section class="hero-console">
-            <div class="container hero-grid">
-                <div class="hero-left">
-                    <span class="eyebrow">// SYSTEM INITIALIZATION</span>
-                    <h1 class="hero-headline">From digital models to confident decisions.</h1>
-                    <p class="hero-intro">Quantiform turns complex engineering systems and corporate operational data into validated digital models, deep structural analytics, and highly predictable systems optimization frameworks.</p>
-                    <div class="hero-actions">
-                        <a href="#book-call" class="btn btn-primary">Book a Diagnostics Sprint</a>
-                        <a href="#services" class="btn btn-secondary">Explore 4×3 Matrix</a>
+    <!-- HERO SECTION -->
+    <section class="bg-gradient-to-b from-brandMist to-white py-20 border-b border-brandMist">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6">
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-brandInk leading-tight">
+                        From digital models to confident decisions.
+                    </h1>
+                    <p class="text-lg text-brandGraphite max-w-2xl">
+                        Quantiform is an engineering technology company that turns complex systems and data into digital models, clear analysis, and reliable decisions. We empower teams to design, test, and improve workflows remotely, globally, and securely.
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <a href="book-call.html" class="bg-brandInk text-white font-semibold px-6 py-3 rounded hover:bg-brandGraphite transition-all shadow-md">Book a Diagnostic</a>
+                        <a href="services.html" class="border-2 border-brandInk text-brandInk font-semibold px-6 py-3 rounded hover:bg-brandMist transition-all">See 12 Offers</a>
                     </div>
                 </div>
-                <div class="hero-right">
-                    <!-- Tech Dashboard Container -->
-                    <div class="dashboard-panel">
-                        <div class="panel-header-bar">
-                            <span class="panel-title">// MODEL FIDELITY VALIDATION REGIME</span>
-                            <span class="panel-id">SYS_ID: ACTIVE_CALIBRATION</span>
-                        </div>
-                        <div class="panel-body">
-                            <div class="visual-canvas">
-                                <svg viewBox="0 0 400 180" class="curve-svg">
-                                    <!-- Grid lines -->
-                                    <line x1="10" y1="20" x2="390" y2="20" stroke="#2A2A2E" stroke-width="0.5" stroke-dasharray="2 4"/>
-                                    <line x1="10" y1="70" x2="390" y2="70" stroke="#2A2A2E" stroke-width="0.5" stroke-dasharray="2 4"/>
-                                    <line x1="10" y1="120" x2="390" y2="120" stroke="#2A2A2E" stroke-width="0.5" stroke-dasharray="2 4"/>
-                                    
-                                    <!-- Measured curve (Static graphite line) -->
-                                    <path d="M10 140 Q 70 30, 150 110 T 270 60 T 390 120" fill="none" stroke="#6B6F76" stroke-width="1.5" stroke-dasharray="4 4" />
-                                    
-                                    <!-- Simulated curve (Dynamic Accent Track) -->
-                                    <path id="dynamic-curve" d="M10 145 Q 70 32, 150 108 T 270 58 T 390 115" fill="none" stroke="var(--clr-accent)" stroke-width="2.5" stroke-linecap="round"/>
-                                </svg>
-                            </div>
-                            <div class="panel-legend">
-                                <span class="legend-item"><span class="dot dot-measured"></span> MEASURED TEST LOGS</span>
-                                <span class="legend-item"><span class="dot dot-simulated" id="legend-dot"></span> SIMULATED ACCURACY</span>
-                            </div>
-                            <div class="panel-footer-metrics">
-                                <span>0.0s (INITIAL STATE)</span>
-                                <span class="metric-highlight">ERR_CONVERGENCE: 98.4%</span>
-                                <span>4.0s (STEADY OVERRUN)</span>
-                            </div>
-                        </div>
+                <div class="lg:col-span-5 bg-white p-6 rounded-lg border border-brandLine shadow-xl">
+                    <div class="text-xs font-mono text-brandSlate mb-4 flex items-center justify-between">
+                        <span>// MODEL FIDELITY VALIDATION REGIME</span>
+                        <span class="text-accentBlue animate-pulse">SYS_ID: ACTIVE_CALIBRATION</span>
+                    </div>
+                    <div class="h-48 flex items-end relative overflow-hidden bg-brandInk p-4 rounded border border-brandInk">
+                        <svg class="w-full h-full text-accentBlue" viewBox="0 0 100 40" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 35 C 15 15, 30 38, 50 12 T 85 22 T 100 5" stroke="#2F6BFF" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+                            <path d="M0 36 C 16 17, 29 40, 49 14 T 84 24 T 100 7" stroke="#FFFFFF" stroke-width="1.5" stroke-dasharray="3 3" stroke-linecap="round" fill="none"/>
+                        </svg>
+                    </div>
+                    <div class="flex justify-end gap-4 mt-3 text-xs font-bold uppercase tracking-wider text-brandSlate">
+                        <div class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-brandSlate"></span>Measured Logs</div>
+                        <div class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-accentBlue"></span>Simulated Twin</div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Sectors and Audiences Section -->
-        <section class="sectors-section">
-            <div class="container">
-                <span class="eyebrow">// TARGET SECTORS</span>
-                <h2 class="section-title">Sectors We Optimize</h2>
-                <p class="section-subtitle">Actionable systems architecture for industries running highly dynamic engineering environments and complex technical stacks.</p>
-                
-                <div class="sectors-grid">
-                    <div class="sector-card">
-                        <h3>Manufacturing & Automation</h3>
-                        <p>Optimizing high-velocity physical setups, minimizing structural prototype cycles through precision systems physics simulations.</p>
-                    </div>
-                    <div class="sector-card">
-                        <h3>Automotive & Mobility</h3>
-                        <p>Dynamic mechatronic loop tuning, virtual verification regimes, and accelerated validation models mapped to field test criteria.</p>
-                    </div>
-                    <div class="sector-card">
-                        <h3>Energy & Industrial Equipment</h3>
-                        <p>Combining physics equations with deep data streams to predict asset behavior, saving downtime and securing high-capacity systems.</p>
-                    </div>
-                </div>
+    <!-- PILLARS SECTION -->
+    <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <span class="text-xs uppercase tracking-widest text-brandSlate font-bold block mb-2">Audience Profiles</span>
+        <h2 class="text-3xl font-bold text-brandInk mb-8">Sized precisely to fit your exact engineering budget</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-brandMist p-6 rounded-lg border border-transparent hover:border-brandLine transition-all">
+                <h3 class="text-lg font-bold text-brandInk mb-2">Companies & R&D Teams</h3>
+                <p class="text-sm text-brandGraphite">Extra specialist capacity in simulation, control, data, and AI, scaling your execution velocity instantly without structural hiring overheads.</p>
             </div>
-        </section>
-
-        <!-- Architecture Matrix (Services) -->
-        <section id="services" class="matrix-section">
-            <div class="container">
-                <span class="eyebrow">// ARCHITECTURE MATRIX</span>
-                <h2 class="section-title">4 Capabilities. 3 Engagement Tiers.</h2>
-                <p class="section-subtitle">Predictable results, fixed scopes, and measurable milestones built to absorb technical volatility cleanly.</p>
-                
-                <div class="table-wrapper">
-                    <table class="matrix-table">
-                        <thead>
-                            <tr>
-                                <th>Engineering Capability</th>
-                                <th>Diagnostic <span class="th-sub">(1-2 Wk Fixed Sprint)</span></th>
-                                <th>Project <span class="th-sub">(Custom Deliverables)</span></th>
-                                <th>Ongoing Support <span class="th-sub">(Monthly Reserved)</span></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="row-twin">
-                                <td class="cap-cell">
-                                    <strong>Quantiform Twin</strong>
-                                    <span class="cap-desc">Physics-based simulation & mechatronics</span>
-                                </td>
-                                <td>
-                                    <div class="offer-title">Twin Feasibility Sprint</div>
-                                    <p>Viability assessment, parameters roadmap and model fidelity scoping strategy.</p>
-                                </td>
-                                <td>
-                                    <div class="offer-title">Digital Twin Build</div>
-                                    <p>Full subsystem assembly calibrated on physical sensor telemetry with error metrics.</p>
-                                </td>
-                                <td>
-                                    <div class="offer-title">Twin Care</div>
-                                    <p>Ongoing validation maintenance routines, new asset scenario injection metrics.</p>
-                                </td>
-                            </tr>
-                            <tr class="row-insight">
-                                <td class="cap-cell">
-                                    <strong>Quantiform Insight</strong>
-                                    <span class="cap-desc">Data analysis & operation dashboards</span>
-                                </td>
-                                <td>
-                                    <div class="offer-title">Data Audit Sprint</div>
-                                    <p>Scrubbing sensor log infrastructure, finding anomalies, mapping core baseline KPIs.</p>
-                                </td>
-                                <td>
-                                    <div class="offer-title">Analytics & Dashboards</div>
-                                    <p>Custom streaming analytical panels displaying core health metrics instantly.</p>
-                                </td>
-                                <td>
-                                    <div class="offer-title">Insight Reporting</div>
-                                    <p>Recurring health evaluations and ongoing operation metric updates.</p>
-                                </td>
-                            </tr>
-                            <tr class="row-intelligence">
-                                <td class="cap-cell">
-                                    <strong>Quantiform Intelligence</strong>
-                                    <span class="cap-desc">AI & data-driven surrogate models</span>
-                                </td>
-                                <td>
-                                    <div class="offer-title">AI Feasibility Sprint</div>
-                                    <p>Feature correlation viability tests and surrogate acceleration strategy maps.</p>
-                                </td>
-                                <td>
-                                    <div class="offer-title">AI & Surrogate Models</div>
-                                    <p>Neural networks trained to emulate heavy mathematical solver computations fast.</p>
-                                </td>
-                                <td>
-                                    <div class="offer-title">Model Monitoring</div>
-                                    <p>Real-time data drift verification and automated neural state recalibration triggers.</p>
-                                </td>
-                            </tr>
-                            <tr class="row-platform">
-                                <td class="cap-cell">
-                                    <strong>Quantiform Platform</strong>
-                                    <span class="cap-desc">Management SaaS software pipeline</span>
-                                </td>
-                                <td>
-                                    <div class="offer-title">Workflow Audit</div>
-                                    <p>Tracking software communication cracks, data storage leaks, and tool overheads.</p>
-                                </td>
-                                <td>
-                                    <div class="offer-title">Setup & Integration</div>
-                                    <p>Deploying dedicated secure project hubs bringing code and data assets together.</p>
-                                </td>
-                                <td>
-                                    <div class="offer-title">Subscription & Support</div>
-                                    <p>Continuous system availability updates, custom user seats and infrastructure maintenance.</p>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+            <div class="bg-brandMist p-6 rounded-lg border border-transparent hover:border-brandLine transition-all">
+                <h3 class="text-lg font-bold text-brandInk mb-2">Small Businesses & Startups</h3>
+                <p class="text-sm text-brandGraphite">Credible engineering infrastructure sized perfectly to a defined deployment plan, starting with a transparent low-commitment fixed-price diagnostic.</p>
             </div>
-        </section>
-
-        <!-- Case Portfolios (6 Demonstrators with Filter Engine) -->
-        <section id="projects" class="portfolio-section">
-            <div class="container">
-                <span class="eyebrow">// CASE PORTFOLIOS</span>
-                <h2 class="section-title">Verified Demonstrators</h2>
-                <p class="section-subtitle">Real technical challenges solved via exact modeling adaptations, measured cleanly with clear target outputs.</p>
-                
-                <div class="portfolio-filters">
-                    <button class="filter-btn active" onclick="filterPortfolio('all')">ALL CAPABILITIES</button>
-                    <button class="filter-btn" onclick="filterPortfolio('twin')">TWIN</button>
-                    <button class="filter-btn" onclick="filterPortfolio('insight')">INSIGHT</button>
-                    <button class="filter-btn" onclick="filterPortfolio('intelligence')">INTELLIGENCE</button>
-                    <button class="filter-btn" onclick="filterPortfolio('platform')">PLATFORM</button>
-                </div>
-
-                <div class="portfolio-grid" id="portfolio-grid">
-                    <!-- Project 1 -->
-                    <div class="case-card" data-service="twin">
-                        <div class="case-header">
-                            <span class="case-tag">ROBOTICS / MECHATRONICS</span>
-                            <span class="honest-badge">Demonstrator</span>
-                        </div>
-                        <h3>Friction-aware digital twin of a positioning drive</h3>
-                        <p class="case-strategy">Model error monitored clearly against validation datasets. Physical prototype tests replaced safely inside simulation runtime code.</p>
-                        <div class="case-metric">ERR_CONVERGENCE: 98.4% MATCH</div>
-                        <div class="case-footer">Tools: MATLAB, Simulink, System Identification</div>
-                    </div>
-                    
-                    <!-- Project 2 -->
-                    <div class="case-card" data-service="twin">
-                        <div class="case-header">
-                            <span class="case-tag">AUTOMATION CONTROL</span>
-                            <span class="honest-badge">Demonstrator</span>
-                        </div>
-                        <h3>Controller design and virtual validation</h3>
-                        <p class="case-strategy">Strict tracking requirements met inside software simulation environments, drastically minimizing live lab calibration durations.</p>
-                        <div class="case-metric">CALIBRATION_TIME: -40% OVERHEAD</div>
-                        <div class="case-footer">Tools: Control Loop Designer, Frequency Shaping Solvers</div>
-                    </div>
-
-                    <!-- Project 3 -->
-                    <div class="case-card" data-service="insight">
-                        <div class="case-header">
-                            <span class="case-tag">FLEET LOGISTICS</span>
-                            <span class="honest-badge">Demonstrator</span>
-                        </div>
-                        <h3>Fleet data analysis and dashboard</h3>
-                        <p class="case-strategy">Aggregating scattered operation logs into single real-time data flows, catching tracking anomalies automatically.</p>
-                        <div class="case-metric">MANUAL_HOURS: 150 HRS SAVED / MO</div>
-                        <div class="case-footer">Tools: Python, Pandas, Apache Arrow, Grafana</div>
-                    </div>
-
-                    <!-- Project 4 -->
-                    <div class="case-card" data-service="intelligence">
-                        <div class="case-header">
-                            <span class="case-tag">COMPUTATIONAL MATH</span>
-                            <span class="honest-badge">Demonstrator</span>
-                        </div>
-                        <h3>Surrogate model that speeds up a simulation</h3>
-                        <p class="case-strategy">Accelerating heavy thermodynamic loop calculations by substituting slow solvers with highly responsive neural approximations.</p>
-                        <div class="case-metric">COMPUTE_VELOCITY: 1,200X ACCELERATION</div>
-                        <div class="case-footer">Tools: PyTorch, SciPy Solvers, Twin Core Link</div>
-                    </div>
-
-                    <!-- Project 5 -->
-                    <div class="case-card" data-service="intelligence">
-                        <div class="case-header">
-                            <span class="case-tag">PREDICTIVE OPERATIONS</span>
-                            <span class="honest-badge">Demonstrator</span>
-                        </div>
-                        <h3>Predictive maintenance feasibility sprint</h3>
-                        <p class="case-strategy">Evaluating factory machine sensor quality levels to map data readiness metrics before launching heavy AI architectures.</p>
-                        <div class="case-metric">DATA_READINESS: 5-DAY VERDICT LOG</div>
-                        <div class="case-footer">Tools: Data Audit Frameworks, Classification Networks</div>
-                    </div>
-
-                    <!-- Project 6 -->
-                    <div class="case-card" data-service="platform">
-                        <div class="case-header">
-                            <span class="case-tag">SaaS / INFRASTRUCTURE</span>
-                            <span class="honest-badge">Demonstrator</span>
-                        </div>
-                        <h3>Engineering data hub (Pilot Platform)</h3>
-                        <p class="case-strategy">Centralizing dynamic math models, parameter code arrays, and deployment tracking sheets inside a secure sandboxed dashboard environment.</p>
-                        <div class="case-metric">HANDOFF_FRICTION: -65% DELAY REDUCTION</div>
-                        <div class="case-footer">Tools: Quantiform SaaS Engine, Postgres, Docker Containerization</div>
-                    </div>
-                </div>
+            <div class="bg-brandMist p-6 rounded-lg border border-transparent hover:border-brandLine transition-all">
+                <h3 class="text-lg font-bold text-brandInk mb-2">Independent Professionals</h3>
+                <p class="text-sm text-brandGraphite">A reliable technical execution partner for specific components requiring advanced mathematical modeling, engineering data computation, or AI pipelines.</p>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Engineering Insights -->
-        <section id="resources" class="insights-section">
-            <div class="container">
-                <span class="eyebrow">// ENGINEERING INSIGHTS</span>
-                <h2 class="section-title">Knowledge Architecture</h2>
-                <p class="section-subtitle">Deep operational walkthroughs, data templates, and research code summaries built by our core technical group.</p>
-                
-                <div class="insights-grid">
-                    <article class="insight-card">
-                        <span class="insight-meta">Technical Insight Note · 8 Min Read</span>
-                        <h3>Accelerating Transient Hydrodynamic Loops Using Clean Python Surrogate Models</h3>
-                        <p>How neural network surrogate architectures can replace slow differential math solver loops inside full real-time plant operation views.</p>
-                        <a href="#book-call" class="insight-link">Read analysis note →</a>
-                    </article>
-                    
-                    <div class="tools-ip-box">
-                        <span class="ip-tag">INTERNAL TOOLS & IP BUILD</span>
-                        <h3>Automated Calibration Pipeline Engine v1.0</h3>
-                        <p>Our upcoming cloud script integration automatically processes field measurement CSV packages into optimal parameter arrays matching targeted physical equations configurations.</p>
-                        <div class="ip-status-badge">STATUS: UNDER TESTING (TARGET PHASE 3 RELEASE)</div>
-                    </div>
-                </div>
+    <!-- SECTORS -->
+    <section class="py-12 bg-brandInk text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="text-xs font-bold uppercase tracking-widest text-brandSlate mb-6">Sectors We Optimize Globally</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-sm font-semibold tracking-tight">
+                <div class="p-4 border border-brandGraphite rounded bg-brandGraphite/30">Manufacturing & Process</div>
+                <div class="p-4 border border-brandGraphite rounded bg-brandGraphite/30">Automotive & Mobility</div>
+                <div class="p-4 border border-brandGraphite rounded bg-brandGraphite/30">Energy & Infrastructure</div>
+                <div class="p-4 border border-brandGraphite rounded bg-brandGraphite/30">Robotics & Automation</div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- About & Team Section -->
-        <section id="company" class="about-section">
-            <div class="container about-grid">
-                <div class="about-left">
-                    <span class="eyebrow">// ABOUT QUANTIFORM</span>
-                    <h2 class="section-title">Operational Vision</h2>
-                    <p>Quantiform operates explicitly to eliminate blind guesswork from physical hardware cycles. We ensure complex engineering groups validate their architectural layouts, loop parameters, and operational datasets via exact automated mathematical twin protocols before running steel transformations in reality.</p>
-                    <div class="statement-card">
-                        <p class="quote-text">"Quantiform is an engineering technology company led by its founding group of four Moroccan engineers, working interactively to absorb technical volatility for high-value enterprise teams."</p>
-                    </div>
-                </div>
-                <div class="about-right">
-                    <span class="eyebrow">// PRINCIPAL TECHNICAL TEAM</span>
-                    <div class="team-list">
-                        <div class="team-member">
-                            <span class="member-role">FOUNDER & GERANT</span>
-                            <h4>Twin & Simulation Lead</h4>
-                            <p>Mechatronic control dynamics loops, calibration algorithms.</p>
-                        </div>
-                        <div class="team-member">
-                            <span class="member-role">PARTNER 2</span>
-                            <h4>Insight & Telemetry Director</h4>
-                            <p>Data audit matrices, database pipeline engineering architectures.</p>
-                        </div>
-                        <div class="team-member">
-                            <span class="member-role">PARTNER 3</span>
-                            <h4>Intelligence & AI Architect</h4>
-                            <p>Neural surrogate models execution, automated systems optimization loops.</p>
-                        </div>
-                        <div class="team-member">
-                            <span class="member-role">PARTNER 4</span>
-                            <h4>Platform Infrastructure Head</h4>
-                            <p>Secure engineering file systems, web stack integrations.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Form Interface Deployment Configuration Block -->
-        <section id="book-call" class="booking-section">
-            <div class="container booking-grid-layout">
-                <div class="booking-left-info">
-                    <span class="eyebrow">// REGISTRATION ENTRY</span>
-                    <h2>Initiate System Diagnostics</h2>
-                    <p>Lock in a fixed-scope assessment loop. We trace engineering dataset formats, evaluate component system dependencies, and map your explicit path forward.</p>
-                    
-                    <div class="response-guarantee">
-                        <div class="g-title">RESPONSE SLA COMMITMENT</div>
-                        <p>Technical engineering assessment proposals delivered directly within 48 business hours maximum.</p>
-                    </div>
-                    
-                    <div class="tz-tracker">
-                        <span>DETECTION CONTEXT:</span>
-                        <span id="client-tz-log" class="tz-badge">Detecting Device Zone...</span>
-                    </div>
-                </div>
-                <div class="booking-right-form">
-                    <form class="terminal-form" onsubmit="processRequestLog(event)">
-                        <div class="form-row-split">
-                            <div class="field-group">
-                                <label for="corp-identity">Corporate Operational Identity</label>
-                                <input type="text" id="corp-identity" required placeholder="e.g., Anis Benjelloun">
-                            </div>
-                            <div class="field-group">
-                                <label for="corp-mail">Electronic Mail Address</label>
-                                <input type="email" id="corp-mail" required placeholder="name@company.com">
-                            </div>
-                        </div>
-                        
-                        <div class="field-group">
-                            <label for="domain-scope">Primary Core Operational Domain</label>
-                            <select id="domain-scope">
-                                <option value="twin">Quantiform Twin Architecture Scopes</option>
-                                <option value="insight">Quantiform Insight (Data & Dashboards)</option>
-                                <option value="intelligence">Quantiform Intelligence (Industrial AI/Telemetry)</option>
-                                <option value="platform">Quantiform Platform (Management SaaS Software)</option>
-                            </select>
-                        </div>
-
-                        <div class="field-group">
-                            <label for="bottleneck-summary">Structural Engineering Bottleneck Summary</label>
-                            <textarea id="bottleneck-summary" rows="4" required placeholder="Identify constraints, data formatting types, or physics solver lags..."></textarea>
-                        </div>
-
-                        <div class="checkbox-container">
-                            <input type="checkbox" id="compliance-check" required>
-                            <label for="compliance-check">I explicitly agree to process my information entries safely in full compliance with localized Moroccan Law 09-08/CNDP and GDPR privacy frameworks to build our technical sync loop.</label>
-                        </div>
-
-                        <button type="submit" class="btn btn-submit-array">Transmit Request Array</button>
-                    </form>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer Security Grid -->
-    <footer class="site-footer">
-        <div class="container footer-grid-flex">
-            <div class="footer-left-brand">
-                <span class="footer-mono">QTF</span>
-                <p>Combining exact engineering mathematical constraints with advanced artificial neural intelligence architectures safely.</p>
-            </div>
-            <div class="footer-right-compliance">
-                <div class="compliance-links">
-                    <a href="#legal-mentions">Legal Mentions</a>
-                    <a href="#privacy-policy">GDPR Privacy Policy</a>
-                    <a href="#cookie-config">Cookie Configurations</a>
-                    <a href="#cgv-terms">Service CGV Terms</a>
-                </div>
-                <div class="compliance-meta">
-                    <span>Operational Sync Active for 2026/2027.</span>
-                    <span>&copy; 2026 Quantiform SARL. All rights reserved globally.</span>
-                </div>
+    <!-- FOOTER -->
+    <footer class="mt-auto bg-brandInk text-white border-t border-brandGraphite py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-sm text-brandSlate">&copy; 2026 Quantiform SARL. All rights reserved globally. Operational Sync Active.</div>
+            <div class="flex gap-6 text-xs text-brandLine">
+                <a href="#" class="hover:underline">Legal Mentions</a>
+                <a href="#" class="hover:underline">GDPR Privacy Policy</a>
+                <a href="#" class="hover:underline">Cookie Configurations</a>
+                <a href="#" class="hover:underline">Service CGV Terms</a>
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
 </body>
 </html>

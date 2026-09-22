@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Quantiform Architecture Matrix</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandInk: '#0E0E10',
+                        brandGraphite: '#2A2A2E',
+                        brandSlate: '#6B6F76',
+                        brandLine: '#D9DBDF',
+                        brandMist: '#F3F4F6',
+                        accentBlue: '#2F6BFF',
+                        accentTeal: '#0FA58F',
+                        accentAmber: '#F0A020',
+                        accentCoral: '#EE5A3C'
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>body { font-family: 'Inter', sans-serif; }</style>
+</head>
+<body class="antialiased min-h-screen flex flex-col bg-white text-brandGraphite">
+
+    <!-- HEADER -->
+    <header class="bg-[#0E0E10] text-white border-b border-brandGraphite h-20 flex items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-2">
+                <span class="text-xl font-bold tracking-tight text-white">Quantiform</span>
+                <span class="text-xs px-2 py-0.5 bg-brandGraphite rounded text-accentBlue font-mono">QTF</span>
+            </a>
+            <nav class="space-x-6 text-sm font-medium text-brandLine">
+                <a href="services.html" class="text-white border-b-2 border-accentBlue pb-1">Services</a>
+                <a href="projects.html" class="hover:text-white">Projects</a>
+                <a href="resources.html" class="hover:text-white">Resources</a>
+                <a href="company.html" class="hover:text-white">Company</a>
+                <a href="book-call.html" class="bg-white text-brandInk px-4 py-2 rounded font-semibold">Book a Call</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 flex-grow w-full">
+        <span class="text-xs uppercase tracking-widest text-brandSlate font-bold block mb-2">Architecture Matrix</span>
+        <h1 class="text-4xl font-bold text-brandInk mb-4">4 Services. 3 Engagement Formats.</h1>
+        <p class="text-brandSlate max-w-2xl mb-12">Twelve predictable engineering offers built systematically with a fixed scope, transparent milestone rules, and verified invoicing parameters.</p>
+
+        <!-- THE MATRIX TABLE -->
+        <div class="overflow-x-auto border border-brandLine rounded-lg shadow-sm mb-16">
+            <table class="w-full text-left border-collapse">
+                <thead>
+                    <tr class="bg-brandInk text-white text-sm">
+                        <th class="p-4 font-semibold">Service Domain</th>
+                        <th class="p-4 font-semibold">Diagnostic <span class="block text-[11px] font-normal text-brandLine">(1-2 Wk Fixed Scope)</span></th>
+                        <th class="p-4 font-semibold">Project <span class="block text-[11px] font-normal text-brandLine">(Custom Milestones)</span></th>
+                        <th class="p-4 font-semibold">Ongoing Support <span class="block text-[11px] font-normal text-brandLine">(Monthly Retainer)</span></th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-brandLine text-sm">
+                    <tr id="twin">
+                        <td class="p-4 bg-brandMist/40 border-r border-brandLine font-bold text-brandInk">
+                            <span class="text-accentBlue block text-xs tracking-wider uppercase mb-1">01 / TWIN</span>
+                            Mechatronics & Simulation
+                            <span class="block font-normal text-xs text-brandSlate mt-1">Will it work before we build it?</span>
+                        </td>
+                        <td class="p-4">
+                            <div class="font-semibold text-brandInk">Twin Feasibility Sprint</div>
+                            <p class="text-xs text-brandSlate mt-1">Assess challenges, verify dataset formatting constraints, map model strategy.</p>
+                        </td>
+                        <td class="p-4">
+                            <div class="font-semibold text-brandInk">Digital Twin Build</div>
+                            <p class="text-xs text-brandSlate mt-1">Subsystem mechatronic code assembly calibrated directly against physics telemetry.</p>
+                        </td>
+                        <td class="p-4">
+                            <div class="font-semibold text-brandInk">Twin Care</div>
+                            <p class="text-xs text-brandSlate mt-1">Ongoing calibration loops maintenance & performance optimization metrics tracking.</p>
+                        </td>
+                    </tr>
+                    <tr id="insight">
+                        <td class="p-4 bg-brandMist/40 border-r border-brandLine font-bold text-brandInk">
+                            <span class="text-accentTeal block text-xs tracking-wider uppercase mb-1">02 / INSIGHT</span>
+                            Data & Analysis
+                            <span class="block font-normal text-xs text-brandSlate mt-1">What is our data telling us?</span>
+                        </td>
+                        <td class="p-4">
+                            <div class="font-semibold text-brandInk">Data Audit Sprint</div>
+                            <p class="text-xs text-brandSlate mt-1">Scrub structural machinery operational logs to score recording pipeline reliability metrics.</p>
+                        </td>
+                        <td class="p-4">
+                            <div class="font-semibold text-brandInk">Analytics & Dashboards</div>
+                            <p class="text-xs text-brandSlate mt-1">Consolidate historical operations records into optimized high-speed visualization screens.</p>
+                        </td>
+                        <td class="p-4">
+                            <div class="font-semibold text-brandInk">Insight Reporting</div>
+                            <p class="text-xs text-brandSlate mt-1">Continuous trend evaluation alerts reporting on streaming mechanical properties constraints.</p>
+                        </td>
+                    </tr>
+                    <tr id="intelligence">
+                        <td class="p-4 bg-brandMist/40 border-r border-brandLine font-bold text-brandInk">
+                            <span class="text-accentAmber block text-xs tracking-wider uppercase mb-1">03 / INTELLIGENCE</span>
+                            AI & Surrogate Models
+                            <span class="block font-normal text-xs text-brandSlate mt-1">Can we predict and optimize?</span>
+                        </td>
+                        <td class="p-4">
+                            <div class="font-semibold text-brandInk">AI Feasibility Sprint</div>
+                            <p class="text-xs text-brandSlate mt-1">Check variable correlation coefficients to map statistical neural engine architecture maps.</p>
+                        </td>
+                        <td class="p-4">
+                            <div class="font-semibold text-brandInk">AI & Surrogate Models</div>
+                            <p class="text-xs text-brandSlate mt-1">Replace heavy mathematical solvers with neural surrogate tracks running 1000x faster.</p>
+                        </td>
+                        <td class="p-4">
+                            <div class="font-semibold text-brandInk">Model Monitoring</div>
+                            <p class="text-xs text-brandSlate mt-1">Automatic drift recalculation monitoring keeping prediction accuracy curves stable.</p>
+                        </td>
+                    </tr>
+                    <tr id="platform">
+                        <td class="p-4 bg-brandMist/40 border-r border-brandLine font-bold text-brandInk">
+                            <span class="text-accentCoral block text-xs tracking-wider uppercase mb-1">04 / PLATFORM</span>
+                            Management SaaS
+                            <span class="block font-normal text-xs text-brandSlate mt-1">How do we keep it in one place?</span>
+                        </td>
+                        <td class="p-4">
+                            <div class="font-semibold text-brandInk">Workflow Audit</div>
+                            <p class="text-xs text-brandSlate mt-1">Trace current software pipelines to identify operational friction bottlenecks.</p>
+                        </td>
+                        <td class="p-4">
+                            <div class="font-semibold text-brandInk">Setup & Integration</div>
+                            <p class="text-xs text-brandSlate mt-1">Provision specialized local secure sandboxed environments connected to asset arrays.</p>
+                        </td>
+                        <td class="p-4">
+                            <div class="font-semibold text-brandInk">Subscription & Support</div>
+                            <p class="text-xs text-brandSlate mt-1">Secure cloud maintenance backing global enterprise multi-user calculation spaces.</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- STRUCTURAL RELATIONSHIPS -->
+        <div class="bg-brandInk text-white p-8 rounded-lg">
+            <h3 class="text-sm font-bold uppercase tracking-widest text-brandSlate mb-4">// System Interconnection Logic</h3>
+            <p class="text-sm leading-relaxed text-brandLine">
+                Insight feeds Intelligence with clean, understood data. Intelligence accelerates Twin modeling execution speeds via machine learning surrogate algorithms. Twin physics structures feed optimal parameters straight down to core complex controls design. Platform unites all active data channels, analytics, and software workflows under a singular remote dashboard space safely.
+            </p>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-brandInk text-white border-t border-brandGraphite py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-sm text-brandSlate">&copy; 2026 Quantiform SARL. All rights reserved globally.</div>
+        </div>
+    </footer>
+</body>
+</html>
